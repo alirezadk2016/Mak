@@ -107,10 +107,14 @@ export default function FooterSection() {
       </div>
 
       {/* Copyright line */}
-      <div className="px-5 sm:px-8 md:px-10 pb-8 border-t border-[#D7E2EA]/10 pt-5">
+      <div className="px-5 sm:px-8 md:px-10 pb-8 border-t border-[#D7E2EA]/10 pt-5 flex items-center justify-between">
         <p className="text-xs uppercase tracking-widest" style={{ color: '#D7E2EA', opacity: 0.15 }}>
-          © 2026 Alireza Makvandi — IT Support & Web Designer
+          © 2026 Alireza Makvandi
         </p>
+        <div className="flex flex-col items-end">
+          <span className="text-[10px] uppercase tracking-[0.25em]" style={{ color: '#D7E2EA', opacity: 0.2 }}>crafted by</span>
+          <span className="font-black uppercase tracking-widest text-sm" style={{ color: '#D7E2EA', opacity: 0.25 }}>MAK</span>
+        </div>
       </div>
     </section>
   )
