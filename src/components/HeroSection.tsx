@@ -37,7 +37,7 @@ export default function HeroSection() {
           <img
             src="/f1145949-0bb9-49ee-984f-8586244456a5.png"
             alt="Alireza Makvandi"
-            className="w-36 h-36 rounded-full object-cover border-2"
+            className="w-52 h-52 rounded-full object-cover border-2"
             style={{ borderColor: 'rgba(215,226,234,0.2)' }}
           />
         </FadeIn>
