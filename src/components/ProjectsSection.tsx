@@ -9,9 +9,9 @@ const projects = [
     category: 'Client',
     name: 'Elite Vask',
     href: 'https://www.elite-vask.dk/',
-    col1img1: 'https://api.screenshotone.com/animate?url=https%3A%2F%2Fwww.elite-vask.dk%2F&viewport_width=1280&viewport_height=900&format=jpg&block_ads=true&block_cookie_banners=true',
-    col1img2: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.elite-vask.dk%2F?w=640&h=480',
-    col2img: 'https://image.thum.io/get/width/1280/https://www.elite-vask.dk/',
+    col1img1: 'https://image.thum.io/get/width/640/crop/500/https://www.elite-vask.dk/',
+    col1img2: 'https://image.thum.io/get/width/640/crop/500/https://www.elite-vask.dk/priser',
+    col2img: 'https://image.thum.io/get/width/1280/crop/900/https://www.elite-vask.dk/',
   },
   {
     num: '03',
