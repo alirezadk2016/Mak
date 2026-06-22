@@ -1,4 +1,4 @@
-export default function ContactButton() {
+export default function ContactButton({ label = 'Contact Me' }: { label?: string }) {
   return (
     <a
       href="#contact"
@@ -13,7 +13,7 @@ export default function ContactButton() {
       }}
       className="px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base text-white font-medium uppercase tracking-widest"
     >
-      Contact Me
+      {label}
     </a>
   )
 }

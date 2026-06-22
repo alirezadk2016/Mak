@@ -1,18 +1,15 @@
 import { motion } from 'framer-motion'
-
-const links = [
-  { label: 'Telefon',   value: '+45 91 48 88 43',  href: 'tel:+4591488843' },
-  { label: 'LinkedIn',  value: 'Alireza Makvandi', href: 'https://dk.linkedin.com/in/alireza-makvandi-446704301' },
-  { label: 'Instagram', value: '@alireza__tak',    href: 'https://www.instagram.com/alireza__tak/' },
-  { label: 'Adresse',   value: 'Aarhus N · DK',   href: 'https://maps.google.com/?q=Aarhus+N+8200+Danmark' },
-]
+import { useLang } from '../contexts/LanguageContext'
+import { t } from '../translations'
 
 export default function FooterSection() {
+  const { lang } = useLang()
+  const tx = t[lang].footer
+
   return (
     <section id="contact" style={{ background: '#0C0C0C' }}>
       <div className="px-5 sm:px-10 md:px-16 pt-20 sm:pt-32 pb-0">
 
-        {/* Label */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -22,11 +19,10 @@ export default function FooterSection() {
         >
           <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#D7E2EA', opacity: 0.4 }} />
           <span style={{ color: '#D7E2EA', opacity: 0.35, fontSize: '11px', letterSpacing: '0.35em', textTransform: 'uppercase' }}>
-            Contact
+            {tx.label}
           </span>
         </motion.div>
 
-        {/* Heading + email side by side on desktop, stacked on mobile */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8 sm:gap-12 mb-10 sm:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -39,9 +35,10 @@ export default function FooterSection() {
               fontWeight: 800,
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
+              whiteSpace: 'pre-line',
             }}
           >
-            Lad os tage<br />en snak.
+            {tx.heading}
           </motion.h2>
 
           <motion.a
@@ -51,28 +48,17 @@ export default function FooterSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="group relative inline-block flex-shrink-0"
-            style={{
-              color: '#D7E2EA',
-              fontSize: 'clamp(1rem, 2.2vw, 1.6rem)',
-              fontWeight: 500,
-              letterSpacing: '-0.01em',
-              opacity: 0.6,
-            }}
+            style={{ color: '#D7E2EA', fontSize: 'clamp(1rem, 2.2vw, 1.6rem)', fontWeight: 500, letterSpacing: '-0.01em', opacity: 0.6 }}
           >
             alirezadk2016@gmail.com
-            <span
-              className="absolute left-0 -bottom-0.5 h-px w-0 group-hover:w-full transition-all duration-500"
-              style={{ background: '#D7E2EA' }}
-            />
+            <span className="absolute left-0 -bottom-0.5 h-px w-0 group-hover:w-full transition-all duration-500" style={{ background: '#D7E2EA' }} />
           </motion.a>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-[#D7E2EA]/10" />
 
-        {/* Links */}
         <div className="py-10 grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {links.map(({ label, value, href }, i) => (
+          {tx.links.map(({ label, value, href }, i) => (
             <motion.a
               key={label}
               href={href}
@@ -96,14 +82,10 @@ export default function FooterSection() {
 
       </div>
 
-      {/* Bottom */}
       <div className="border-t border-[#D7E2EA]/8">
         <div className="px-5 sm:px-10 md:px-16 py-6 flex items-center gap-4">
           <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.06)' }} />
-          <div
-            className="flex items-center gap-2 px-5 py-2 rounded-full border flex-shrink-0"
-            style={{ borderColor: 'rgba(215,226,234,0.1)' }}
-          >
+          <div className="flex items-center gap-2 px-5 py-2 rounded-full border flex-shrink-0" style={{ borderColor: 'rgba(215,226,234,0.1)' }}>
             <span style={{ color: '#D7E2EA', opacity: 0.25, fontSize: '10px' }}>&lt;&gt;</span>
             <span style={{ color: '#D7E2EA', opacity: 0.2, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase' }}>Crafted by</span>
             <span style={{ color: '#D7E2EA', opacity: 0.45, fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>MAK</span>

@@ -1,0 +1,189 @@
+export const t = {
+  da: {
+    nav: {
+      about: 'Om mig',
+      experience: 'Erfaring',
+      projects: 'Projekter',
+      contact: 'Kontakt',
+    },
+    hero: {
+      heading: "Hej, jeg er Mak",
+      role: 'IT-supporter & Web Designer',
+      cta: 'Kontakt mig',
+    },
+    about: {
+      heading: 'Om mig',
+      bio: 'Nyuddannet IT-supporter fra Aarhus Tech med solid erfaring inden for netværk, servere og brugersupport. Jeg kombinerer teknisk præcision med et øje for design — og jeg er klar til at bidrage fra dag ét.',
+      stats: [
+        { num: '3+', label: 'Virksomheder' },
+        { num: '2026', label: 'Aarhus Tech' },
+        { num: '6', label: 'IT Services' },
+      ],
+    },
+    services: {
+      sectionLabel: 'IT-supporteruddannelsen — Aarhus Tech · Afsluttet 2026',
+      heading: 'Services',
+      items: [
+        {
+          num: '01',
+          name: 'Hardware Support',
+          desc: 'Installation, opgradering og udskiftning af computerkomponenter. Fejlfinding på hardware — fra RAM og harddiske til printere og perifere enheder. Klargøring af nye arbejdsstationer til slutbrugere.',
+          tags: ['PC-teknik', 'Komponenter', 'Printere', 'Perifere enheder'],
+        },
+        {
+          num: '02',
+          name: 'Software & OS',
+          desc: 'Installation og konfiguration af Windows og Linux-operativsystemer. Softwareinstallation, opdateringer og fejlfinding. Brugertilpasning og administration af klient-OS.',
+          tags: ['Windows', 'Linux', 'VMware', 'Fejlfinding'],
+        },
+        {
+          num: '03',
+          name: 'Netværk & Server',
+          desc: 'Opsætning og konfiguration af LAN, WLAN og VPN. Administration af Windows Server med Active Directory, DNS, DHCP og GPO. Planlægning og idriftsætning af netværksmiljøer.',
+          tags: ['Active Directory', 'DNS/DHCP', 'GPO', 'VPN', 'Linux Server'],
+        },
+        {
+          num: '04',
+          name: 'IT-sikkerhed',
+          desc: 'Grundlæggende IT-sikkerhed og backup-løsninger. Adgangsstyring og rettighedshåndtering. Opsætning af sikkerhedsløsninger på netværk og servere.',
+          tags: ['Sikkerhed', 'Backup', 'Adgangsstyring', 'Netværkssikkerhed'],
+        },
+        {
+          num: '05',
+          name: 'Web Design',
+          desc: 'Design og udvikling af moderne, responsive hjemmesider. Fra konceptet til et færdigt digitalt produkt — med fokus på brugeroplevelse, visuel identitet og performance.',
+          tags: ['React', 'Tailwind CSS', 'TypeScript', 'Vite'],
+        },
+        {
+          num: '06',
+          name: 'Brugersupport',
+          desc: 'Professionel og tålmodig support til slutbrugere — uanset teknisk niveau. Login, e-mail, printerproblemer og softwareinstallation. Erfaring med support til ældre borgere og under eksamener.',
+          tags: ['Helpdesk', 'IT-service', 'Kommunikation', 'Dokumentation'],
+        },
+      ],
+    },
+    experience: {
+      heading: 'Erfaring',
+      viewDetails: 'Se detaljer →',
+      items: [
+        { slug: 'yousee', company: 'YouSee', role: 'Kundeservice & Administration', period: 'IGU Program' },
+        { slug: 'fourcom', company: 'Fourcom', role: 'IT Support Praktikant', period: '2 måneders praktik' },
+        { slug: 'folkehuse', company: 'Folkehuse Aarhus', role: 'IT Support — Skolepraktik', period: 'Skolepraktik' },
+      ],
+    },
+    projects: {
+      heading: 'Projekter',
+      liveProject: 'Se projekt',
+      viewPdf: 'Se PDF',
+    },
+    footer: {
+      label: 'Kontakt',
+      heading: 'Lad os tage\nen snak.',
+      links: [
+        { label: 'Telefon',    value: '+45 91 48 88 43',  href: 'tel:+4591488843' },
+        { label: 'LinkedIn',   value: 'Alireza Makvandi', href: 'https://dk.linkedin.com/in/alireza-makvandi-446704301' },
+        { label: 'Instagram',  value: '@alireza__tak',    href: 'https://www.instagram.com/alireza__tak/' },
+        { label: 'Adresse',    value: 'Aarhus N · DK',   href: 'https://maps.google.com/?q=Aarhus+N+8200+Danmark' },
+      ],
+    },
+    experienceDetail: {
+      back: 'Tilbage',
+      visitSite: 'Besøg side',
+      viewSite: 'Se side →',
+    },
+  },
+
+  en: {
+    nav: {
+      about: 'About',
+      experience: 'Experience',
+      projects: 'Projects',
+      contact: 'Contact',
+    },
+    hero: {
+      heading: "Hi, i'm Mak",
+      role: 'IT Support & Web Designer',
+      cta: 'Contact Me',
+    },
+    about: {
+      heading: 'About me',
+      bio: 'Newly qualified IT Support Technician from Aarhus Tech with solid experience in networking, servers and user support. I combine technical precision with an eye for design — and I am ready to contribute from day one.',
+      stats: [
+        { num: '3+', label: 'Companies' },
+        { num: '2026', label: 'Aarhus Tech' },
+        { num: '6', label: 'IT Services' },
+      ],
+    },
+    services: {
+      sectionLabel: 'IT Support Education — Aarhus Tech · Completed 2026',
+      heading: 'Services',
+      items: [
+        {
+          num: '01',
+          name: 'Hardware Support',
+          desc: 'Installation, upgrading and replacement of computer components. Hardware troubleshooting — from RAM and hard drives to printers and peripherals. Setup of new workstations for end users.',
+          tags: ['PC Repair', 'Components', 'Printers', 'Peripherals'],
+        },
+        {
+          num: '02',
+          name: 'Software & OS',
+          desc: 'Installation and configuration of Windows and Linux operating systems. Software installation, updates and troubleshooting. User customization and client OS administration.',
+          tags: ['Windows', 'Linux', 'VMware', 'Troubleshooting'],
+        },
+        {
+          num: '03',
+          name: 'Network & Server',
+          desc: 'Setup and configuration of LAN, WLAN and VPN. Administration of Windows Server with Active Directory, DNS, DHCP and GPO. Planning and deployment of network environments.',
+          tags: ['Active Directory', 'DNS/DHCP', 'GPO', 'VPN', 'Linux Server'],
+        },
+        {
+          num: '04',
+          name: 'IT Security',
+          desc: 'Basic IT security and backup solutions. Access management and rights handling. Setup of security solutions for networks and servers.',
+          tags: ['Security', 'Backup', 'Access Control', 'Network Security'],
+        },
+        {
+          num: '05',
+          name: 'Web Design',
+          desc: 'Design and development of modern, responsive websites. From concept to a finished digital product — focused on user experience, visual identity and performance.',
+          tags: ['React', 'Tailwind CSS', 'TypeScript', 'Vite'],
+        },
+        {
+          num: '06',
+          name: 'User Support',
+          desc: 'Professional and patient support for end users — regardless of technical level. Login, email, printer issues and software installation. Experience supporting elderly citizens and during exams.',
+          tags: ['Helpdesk', 'IT Service', 'Communication', 'Documentation'],
+        },
+      ],
+    },
+    experience: {
+      heading: 'Experience',
+      viewDetails: 'View Details →',
+      items: [
+        { slug: 'yousee', company: 'YouSee', role: 'Customer Service & Administration', period: 'IGU Program' },
+        { slug: 'fourcom', company: 'Fourcom', role: 'IT Support Intern', period: '2 month internship' },
+        { slug: 'folkehuse', company: 'Folkehuse Aarhus', role: 'IT Support — School Placement', period: 'School Placement' },
+      ],
+    },
+    projects: {
+      heading: 'Projects',
+      liveProject: 'Live Project',
+      viewPdf: 'View PDF',
+    },
+    footer: {
+      label: 'Contact',
+      heading: "Let's have\na chat.",
+      links: [
+        { label: 'Phone',     value: '+45 91 48 88 43',  href: 'tel:+4591488843' },
+        { label: 'LinkedIn',  value: 'Alireza Makvandi', href: 'https://dk.linkedin.com/in/alireza-makvandi-446704301' },
+        { label: 'Instagram', value: '@alireza__tak',    href: 'https://www.instagram.com/alireza__tak/' },
+        { label: 'Address',   value: 'Aarhus N · DK',   href: 'https://maps.google.com/?q=Aarhus+N+8200+Danmark' },
+      ],
+    },
+    experienceDetail: {
+      back: 'Back',
+      visitSite: 'Visit Site',
+      viewSite: 'View Site →',
+    },
+  },
+}

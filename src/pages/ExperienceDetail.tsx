@@ -1,95 +1,99 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import { useLang } from '../contexts/LanguageContext'
+import { t } from '../translations'
 
-const experiences: Record<string, {
+type ExpData = {
   company: string
-  role: string
-  period: string
+  role: { da: string; en: string }
+  period: { da: string; en: string }
   url: string
   priceUrl: string
   screenshot: string
   color: string
-  tasks: { title: string; items: string[] }[]
-}> = {
+  tasks: { title: { da: string; en: string }; items: { da: string; en: string }[] }[]
+}
+
+const experiences: Record<string, ExpData> = {
   yousee: {
     company: 'YouSee',
-    role: 'Customer Service & Administration',
-    period: 'IGU Program',
+    role: { da: 'Kundeservice & Administration', en: 'Customer Service & Administration' },
+    period: { da: 'IGU Program', en: 'IGU Program' },
     url: 'https://yousee.dk/',
     priceUrl: 'https://yousee.dk/tv/pakker',
     screenshot: 'https://image.thum.io/get/width/1280/crop/720/https://yousee.dk/',
     color: '#E4002B',
     tasks: [
       {
-        title: 'Kundeservice',
+        title: { da: 'Kundeservice', en: 'Customer Service' },
         items: [
-          'Daglig kundekontakt og håndtering af henvendelser',
-          'Klar kommunikation med ikke-tekniske brugere',
-          'Løsning af problemer relateret til TV, internet og telefoni',
+          { da: 'Daglig kundekontakt og håndtering af henvendelser', en: 'Daily customer contact and handling of inquiries' },
+          { da: 'Klar kommunikation med ikke-tekniske brugere', en: 'Clear communication with non-technical users' },
+          { da: 'Løsning af problemer relateret til TV, internet og telefoni', en: 'Resolving issues related to TV, internet and telephony' },
         ],
       },
       {
-        title: 'Administration',
+        title: { da: 'Administration', en: 'Administration' },
         items: [
-          'Daglig administrativ sagsbehandling',
-          'Registrering og opfølgning på kundedata',
-          'Samarbejde på tværs af afdelinger',
+          { da: 'Daglig administrativ sagsbehandling', en: 'Daily administrative case processing' },
+          { da: 'Registrering og opfølgning på kundedata', en: 'Registration and follow-up on customer data' },
+          { da: 'Samarbejde på tværs af afdelinger', en: 'Cross-departmental collaboration' },
         ],
       },
     ],
   },
   fourcom: {
     company: 'Fourcom',
-    role: 'IT Support Intern',
-    period: '2 måneders praktik',
+    role: { da: 'IT Support Praktikant', en: 'IT Support Intern' },
+    period: { da: '2 måneders praktik', en: '2 month internship' },
     url: 'https://en.fourcom.dk/',
     priceUrl: 'https://en.fourcom.dk/services',
     screenshot: 'https://image.thum.io/get/width/1280/crop/720/https://en.fourcom.dk/',
     color: '#0057B8',
     tasks: [
       {
-        title: 'Hardware Support',
+        title: { da: 'Hardware Support', en: 'Hardware Support' },
         items: [
-          'Installation og konfiguration af Windows på arbejdsstationer',
-          'Fejlfinding og udskiftning af hardwarekomponenter',
-          'Klargøring af nye computere til slutbrugere',
+          { da: 'Installation og konfiguration af Windows på arbejdsstationer', en: 'Installation and configuration of Windows on workstations' },
+          { da: 'Fejlfinding og udskiftning af hardwarekomponenter', en: 'Troubleshooting and replacement of hardware components' },
+          { da: 'Klargøring af nye computere til slutbrugere', en: 'Preparation of new computers for end users' },
         ],
       },
       {
-        title: 'Teknisk Support',
+        title: { da: 'Teknisk Support', en: 'Technical Support' },
         items: [
-          'Brugersupport ved tekniske problemer',
-          'Dokumentation af udførte opgaver',
-          'Samarbejde med senior-teknikere om komplekse sager',
+          { da: 'Brugersupport ved tekniske problemer', en: 'User support for technical issues' },
+          { da: 'Dokumentation af udførte opgaver', en: 'Documentation of completed tasks' },
+          { da: 'Samarbejde med senior-teknikere om komplekse sager', en: 'Collaboration with senior technicians on complex cases' },
         ],
       },
     ],
   },
   folkehuse: {
     company: 'Folkehuse Aarhus',
-    role: 'IT Support — Skolepraktik',
-    period: 'Skolepraktik — Aarhus Tech',
+    role: { da: 'IT Support — Skolepraktik', en: 'IT Support — School Placement' },
+    period: { da: 'Skolepraktik — Aarhus Tech', en: 'School Placement — Aarhus Tech' },
     url: 'https://folkehuse.aarhus.dk/',
     priceUrl: 'https://folkehuse.aarhus.dk/',
     screenshot: 'https://image.thum.io/get/width/1280/crop/720/https://folkehuse.aarhus.dk/',
     color: '#2E7D32',
     tasks: [
       {
-        title: 'Brugersupport',
+        title: { da: 'Brugersupport', en: 'User Support' },
         items: [
-          'IT-support på tværs af flere institutioner i Aarhus',
-          'Hjælp til ældre borgere på plejehjem med daglig IT-brug',
-          'Teknisk support under eksamener',
+          { da: 'IT-support på tværs af flere institutioner i Aarhus', en: 'IT support across multiple institutions in Aarhus' },
+          { da: 'Hjælp til ældre borgere på plejehjem med daglig IT-brug', en: 'Assistance to elderly citizens at care homes with daily IT use' },
+          { da: 'Teknisk support under eksamener', en: 'Technical support during exams' },
         ],
       },
       {
-        title: 'Daglige Opgaver',
+        title: { da: 'Daglige Opgaver', en: 'Daily Tasks' },
         items: [
-          'Loginproblemer og adgangsstyring',
-          'E-mail opsætning og fejlfinding',
-          'Printeropsætning og vedligeholdelse',
-          'Softwareinstallation og opdateringer',
+          { da: 'Loginproblemer og adgangsstyring', en: 'Login issues and access management' },
+          { da: 'E-mail opsætning og fejlfinding', en: 'Email setup and troubleshooting' },
+          { da: 'Printeropsætning og vedligeholdelse', en: 'Printer setup and maintenance' },
+          { da: 'Softwareinstallation og opdateringer', en: 'Software installation and updates' },
         ],
       },
     ],
@@ -98,6 +102,8 @@ const experiences: Record<string, {
 
 export default function ExperienceDetail() {
   const { slug } = useParams<{ slug: string }>()
+  const { lang } = useLang()
+  const tx = t[lang].experienceDetail
   const exp = experiences[slug ?? '']
 
   if (!exp) {
@@ -110,14 +116,13 @@ export default function ExperienceDetail() {
 
   return (
     <div className="min-h-screen" style={{ background: '#0C0C0C' }}>
-      {/* Header */}
       <div className="px-6 sm:px-10 py-6 flex items-center justify-between border-b border-[#D7E2EA]/10">
         <Link
           to="/"
           className="flex items-center gap-2 text-[#D7E2EA]/60 hover:text-[#D7E2EA] transition-colors text-sm uppercase tracking-widest"
         >
           <ArrowLeft size={16} />
-          Back
+          {tx.back}
         </Link>
         <a
           href={exp.url}
@@ -125,25 +130,20 @@ export default function ExperienceDetail() {
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-[#D7E2EA]/60 hover:text-[#D7E2EA] transition-colors text-sm uppercase tracking-widest"
         >
-          Visit Site
+          {tx.visitSite}
           <ExternalLink size={14} />
         </a>
       </div>
 
-      {/* Hero */}
       <div className="px-6 sm:px-10 pt-16 pb-10 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <p className="text-[#D7E2EA]/40 uppercase tracking-widest text-sm mb-2">{exp.period}</p>
-          <h1
-            className="font-black uppercase leading-none tracking-tight mb-4"
-            style={{ fontSize: 'clamp(3rem, 10vw, 120px)', color: '#D7E2EA' }}
-          >
+          <p className="text-[#D7E2EA]/40 uppercase tracking-widest text-sm mb-2">{exp.period[lang]}</p>
+          <h1 className="font-black uppercase leading-none tracking-tight mb-4" style={{ fontSize: 'clamp(3rem, 10vw, 120px)', color: '#D7E2EA' }}>
             {exp.company}
           </h1>
-          <p className="text-[#D7E2EA]/60 text-lg mb-10">{exp.role}</p>
+          <p className="text-[#D7E2EA]/60 text-lg mb-10">{exp.role[lang]}</p>
         </motion.div>
 
-        {/* Screenshot linking to price page */}
         <motion.a
           href={exp.priceUrl}
           target="_blank"
@@ -154,20 +154,15 @@ export default function ExperienceDetail() {
           className="block overflow-hidden rounded-[24px] border-2 border-[#D7E2EA]/20 hover:border-[#D7E2EA]/50 transition-all duration-300 group mb-16"
         >
           <div className="relative" style={{ aspectRatio: '16/7' }}>
-            <img
-              src={exp.screenshot}
-              alt={exp.company}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
+            <img src={exp.screenshot} alt={exp.company} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
               <span className="text-white font-medium uppercase tracking-widest border border-white rounded-full px-6 py-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                View Site →
+                {tx.viewSite}
               </span>
             </div>
           </div>
         </motion.a>
 
-        {/* Tasks */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {exp.tasks.map((section, i) => (
             <motion.div
@@ -177,17 +172,14 @@ export default function ExperienceDetail() {
               transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
               className="rounded-[20px] border border-[#D7E2EA]/15 p-6"
             >
-              <h3
-                className="font-bold uppercase tracking-widest text-sm mb-4"
-                style={{ color: exp.color }}
-              >
-                {section.title}
+              <h3 className="font-bold uppercase tracking-widest text-sm mb-4" style={{ color: exp.color }}>
+                {section.title[lang]}
               </h3>
               <ul className="space-y-3">
                 {section.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-3 text-[#D7E2EA]/70 text-sm leading-relaxed">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: exp.color }} />
-                    {item}
+                    {item[lang]}
                   </li>
                 ))}
               </ul>

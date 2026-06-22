@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { LanguageProvider } from './contexts/LanguageContext'
 import HeroSection from './components/HeroSection'
 import MarqueeSection from './components/MarqueeSection'
 import AboutSection from './components/AboutSection'
@@ -24,9 +25,11 @@ function Home() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/experience/:slug" element={<ExperienceDetail />} />
-    </Routes>
+    <LanguageProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/experience/:slug" element={<ExperienceDetail />} />
+      </Routes>
+    </LanguageProvider>
   )
 }
