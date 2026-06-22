@@ -13,7 +13,7 @@ export const t = {
     },
     about: {
       heading: 'Om mig',
-      bio: 'Inden jeg kom til Danmark, arbejdede jeg med webudvikling, SEO og digital markedsføring — og det var der, min interesse for teknologi virkelig tog fart. Da jeg slog mig ned i Danmark, valgte jeg at bygge videre på den passion og uddannede mig til IT-supporter på Aarhus Tech. Jeg har erfaring med mennesker på tværs af generationer og formår at løse tekniske udfordringer på en rolig og klar måde — uanset alder eller baggrund. Jeg er engageret, smilende og trives i miljøer, hvor der er plads til at lære og vokse.',
+      bio: 'Inden jeg kom til Danmark, arbejdede jeg i næsten to år med webudvikling, SEO og digital markedsføring i Iran. Det var der, jeg lærte værdien af at holde sig opdateret — teknologi udvikler sig konstant, og jeg har aldrig troet på at hænge fast i gamle metoder. Da jeg ankom til Danmark, startede jeg forfra: jeg lærte sproget, gennemførte et IT-grundforløb og fik plads på Aarhus Tech. Min indsats blev bemærket — jeg fik en IGU-plads hos YouSee, hvor jeg siden blev fastansat og opbyggede solid erfaring inden for kundeservice og IT-administration. Jeg arbejder godt i teams, søger altid sparring og trives i miljøer, hvor man løfter hinanden. Jeg er målrettet, tilpasningsdygtig og klar til at bidrage fra dag ét — uanset om det er i en helpdesk-funktion eller som del af et større IT-team.',
       stats: [
         { num: '3+', label: 'Virksomheder' },
         { num: '2026', label: 'Aarhus Tech' },
@@ -111,7 +111,7 @@ export const t = {
     },
     about: {
       heading: 'About me',
-      bio: 'Before moving to Denmark, I worked in web design, SEO and digital marketing — and that is where my passion for technology truly took shape. When I settled in Denmark, I chose to build on that foundation and trained as an IT Support Technician at Aarhus Tech. I have experience working with people across all generations and am able to handle technical challenges calmly and clearly, regardless of age or background. I am engaged, always bring a positive energy, and thrive in environments where there is room to learn and grow.',
+      bio: 'Before coming to Denmark, I spent nearly two years working in web development, SEO and digital marketing in Iran. That experience taught me the importance of staying current — technology moves fast, and I have never believed in clinging to outdated methods. When I arrived in Denmark, I started over: learned the language, completed an IT foundation course and earned a place at Aarhus Tech. My effort was recognised — I was offered an IGU position at YouSee, where I was later permanently employed and gained solid experience in customer service and IT administration. I work well in teams, always seek input from colleagues and thrive in environments where people support each other. I am driven, adaptable and ready to contribute from day one — whether in a helpdesk role or as part of a larger IT team.',
       stats: [
         { num: '3+', label: 'Companies' },
         { num: '2026', label: 'Aarhus Tech' },
