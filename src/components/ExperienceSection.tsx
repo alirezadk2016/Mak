@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import FadeIn from './FadeIn'
 import { useLang } from '../contexts/LanguageContext'
@@ -19,8 +19,12 @@ const accentColors: Record<string, string> = {
   aarhustech: '#FF6B00',
 }
 
-function TiltCard({ exp, viewDetails }: { exp: { slug: string; company: string; role: string; period: string }; viewDetails: string }) {
+function TiltCard({ exp, viewDetails, index, total }: { exp: { slug: string; company: string; role: string; period: string }; viewDetails: string; index: number; total: number }) {
   const ref = useRef<HTMLDivElement>(null)
+  const cardRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({ target: cardRef, offset: ['start end', 'end start'] })
+  const targetScale = 1 - (total - 1 - index) * 0.03
+  const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale])
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -45,6 +49,8 @@ function TiltCard({ exp, viewDetails }: { exp: { slug: string; company: string; 
   const accent = accentColors[exp.slug]
 
   return (
+    <div ref={cardRef} style={{ height: 'min(70vh, 520px)', paddingTop: index * 16 + 'px' }} className="flex items-start justify-center">
+    <motion.div style={{ scale, top: 80 + index * 16 + 'px', position: 'sticky', width: '100%' }}>
     <Link to={'/experience/' + exp.slug} className="block" style={{ perspective: '800px' }}>
       {/* Desktop: tilt card */}
       <motion.div
@@ -134,6 +140,8 @@ function TiltCard({ exp, viewDetails }: { exp: { slug: string; company: string; 
         </div>
       </motion.div>
     </Link>
+    </motion.div>
+    </div>
   )
 }
 
@@ -164,11 +172,9 @@ export default function ExperienceSection() {
         </p>
       </FadeIn>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      <div className="flex flex-col max-w-4xl mx-auto">
         {tx.items.map((exp, i) => (
-          <FadeIn key={i} delay={i * 0.12} y={40}>
-            <TiltCard exp={exp} viewDetails={tx.viewDetails} />
-          </FadeIn>
+          <TiltCard key={i} exp={exp} viewDetails={tx.viewDetails} index={i} total={tx.items.length} />
         ))}
       </div>
     </section>
