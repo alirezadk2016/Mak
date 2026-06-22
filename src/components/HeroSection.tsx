@@ -25,6 +25,13 @@ function AnimatedHeading({ text }: { text: string }) {
   )
 }
 
+function scrollTo(id: string) {
+  const el = document.getElementById(id)
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.scrollY - 80
+  window.scrollTo({ top, behavior: 'smooth' })
+}
+
 export default function HeroSection() {
   const { lang, toggle } = useLang()
   const tx = t[lang]
@@ -99,6 +106,7 @@ export default function HeroSection() {
               <a
                 key={key}
                 href={`#${key}`}
+                onClick={(e) => { e.preventDefault(); scrollTo(key) }}
                 className="text-xs sm:text-lg lg:text-[1.4rem] font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70"
                 style={{ color: '#D7E2EA' }}
               >
@@ -110,6 +118,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-3 sm:gap-6">
             <a
               href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollTo('contact') }}
               className="text-xs sm:text-lg lg:text-[1.4rem] font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70"
               style={{ color: '#D7E2EA' }}
             >

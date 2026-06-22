@@ -1,7 +1,15 @@
+function scrollToContact() {
+  const el = document.getElementById('contact')
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.scrollY - 80
+  window.scrollTo({ top, behavior: 'smooth' })
+}
+
 export default function ContactButton({ label = 'Contact Me' }: { label?: string }) {
   return (
     <a
       href="#contact"
+      onClick={(e) => { e.preventDefault(); scrollToContact() }}
       style={{
         background: 'linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)',
         boxShadow: '0px 4px 4px rgba(181, 1, 167, 0.25), inset 4px 4px 12px #7721B1',
