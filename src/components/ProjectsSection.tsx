@@ -64,11 +64,11 @@ function ProjectCard({
     <div
       ref={cardRef}
       className="flex items-start justify-center"
-      style={{ height: project.col2img ? 'min(88vh, 700px)' : 'auto', paddingTop: index * 18 + 'px' }}
+      style={{ height: project.col2img ? 'min(80vh, 680px)' : 'auto', paddingTop: index * 18 + 'px' }}
     >
       <motion.div
-        style={{ scale, top: 72 + index * 18 + 'px', position: 'sticky', maxHeight: 'calc(100vh - 100px)' }}
-        className="w-full overflow-hidden"
+        style={{ scale, top: 72 + index * 18 + 'px', position: 'sticky' }}
+        className="w-full"
         onClick={handleClick}
       >
         {/* Outer frame */}
@@ -127,19 +127,19 @@ function ProjectCard({
           {/* Images */}
           {(project.col1img1 || project.col2img) && <div className="px-3 sm:px-5 pb-3 sm:pb-5">
             {/* Desktop: two-column */}
-            <div className="hidden sm:flex gap-3">
+            <div className="hidden sm:flex gap-3" style={{ height: 'clamp(260px, 36vw, 460px)' }}>
               <div className="flex flex-col gap-3" style={{ width: '38%' }}>
                 <img
                   src={project.col1img1}
                   alt=""
                   className="w-full object-cover rounded-[16px] sm:rounded-[24px]"
-                  style={{ height: 'clamp(90px, 14vw, 200px)' }}
+                  style={{ flex: '0 0 38%' }}
                 />
                 <img
                   src={project.col1img2}
                   alt=""
                   className="w-full object-cover rounded-[16px] sm:rounded-[24px]"
-                  style={{ height: 'clamp(110px, 18vw, 270px)' }}
+                  style={{ flex: '1 1 0' }}
                 />
               </div>
               <div style={{ width: '62%' }}>
