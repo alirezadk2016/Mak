@@ -1,6 +1,34 @@
 import { motion } from 'framer-motion'
+import { Mail, Linkedin, Instagram, Phone } from 'lucide-react'
 import { useLang } from '../contexts/LanguageContext'
 import { t } from '../translations'
+
+const contactItems = [
+  {
+    icon: Phone,
+    label: { da: 'Telefon', en: 'Phone' },
+    value: '+45 91 48 88 43',
+    href: 'tel:+4591488843',
+  },
+  {
+    icon: Mail,
+    label: { da: 'E-mail', en: 'Email' },
+    value: 'alirezadk2016@gmail.com',
+    href: 'mailto:alirezadk2016@gmail.com',
+  },
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    value: 'Alireza Makvandi',
+    href: 'https://dk.linkedin.com/in/alireza-makvandi-446704301',
+  },
+  {
+    icon: Instagram,
+    label: 'Instagram',
+    value: '@alireza__tak',
+    href: 'https://www.instagram.com/alireza__tak/',
+  },
+]
 
 export default function FooterSection() {
   const { lang } = useLang()
@@ -10,6 +38,7 @@ export default function FooterSection() {
     <section id="contact" style={{ background: '#0C0C0C' }}>
       <div className="px-5 sm:px-10 md:px-16 pt-20 sm:pt-32 pb-0">
 
+        {/* Label */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -23,57 +52,48 @@ export default function FooterSection() {
           </span>
         </motion.div>
 
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8 sm:gap-12 mb-10 sm:mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            style={{
-              color: '#D7E2EA',
-              fontSize: 'clamp(2rem, 5vw, 4.5rem)',
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-              whiteSpace: 'pre-line',
-            }}
-          >
-            {tx.heading}
-          </motion.h2>
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{
+            color: '#D7E2EA',
+            fontSize: 'clamp(2.2rem, 6vw, 5.5rem)',
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: '-0.03em',
+            whiteSpace: 'pre-line',
+          }}
+          className="mb-16 sm:mb-20"
+        >
+          {tx.heading}
+        </motion.h2>
 
-          <motion.a
-            href="mailto:alirezadk2016@gmail.com"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="group relative inline-block flex-shrink-0"
-            style={{ color: '#D7E2EA', fontSize: 'clamp(1rem, 2.2vw, 1.6rem)', fontWeight: 500, letterSpacing: '-0.01em', opacity: 0.6 }}
-          >
-            alirezadk2016@gmail.com
-            <span className="absolute left-0 -bottom-0.5 h-px w-0 group-hover:w-full transition-all duration-500" style={{ background: '#D7E2EA' }} />
-          </motion.a>
-        </div>
-
-        <div className="border-t border-[#D7E2EA]/10" />
-
-        <div className="py-10 grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {tx.links.map(({ label, value, href }, i) => (
+        {/* Contact cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-0">
+          {contactItems.map(({ icon: Icon, label, value, href }, i) => (
             <motion.a
-              key={label}
+              key={href}
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="flex flex-col gap-2 hover:opacity-50 transition-opacity duration-200"
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              className="group flex flex-col gap-4 rounded-[20px] border border-[#D7E2EA]/10 p-5 hover:border-[#D7E2EA]/30 hover:bg-[#D7E2EA]/3 transition-all duration-300"
             >
-              <span style={{ color: '#D7E2EA', opacity: 0.3, fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
-                {label}
-              </span>
-              <span style={{ color: '#D7E2EA', fontSize: '0.9rem', fontWeight: 500 }}>
+              <div className="flex items-center justify-between">
+                <span style={{ color: '#D7E2EA', opacity: 0.25, fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
+                  {typeof label === 'object' ? label[lang] : label}
+                </span>
+                <div className="w-8 h-8 rounded-full border border-[#D7E2EA]/15 flex items-center justify-center group-hover:border-[#D7E2EA]/35 transition-colors duration-300">
+                  <Icon size={14} style={{ color: '#D7E2EA', opacity: 0.5 }} strokeWidth={1.5} />
+                </div>
+              </div>
+              <span style={{ color: '#D7E2EA', fontSize: '0.85rem', fontWeight: 500, opacity: 0.85 }} className="leading-snug">
                 {value}
               </span>
             </motion.a>
@@ -82,7 +102,8 @@ export default function FooterSection() {
 
       </div>
 
-      <div className="border-t border-[#D7E2EA]/8">
+      {/* Bottom */}
+      <div className="mt-16 border-t border-[#D7E2EA]/8">
         <div className="px-5 sm:px-10 md:px-16 py-6 flex items-center gap-4">
           <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.06)' }} />
           <div className="flex items-center gap-2 px-5 py-2 rounded-full border flex-shrink-0" style={{ borderColor: 'rgba(215,226,234,0.1)' }}>

@@ -75,6 +75,7 @@ export const t = {
       heading: 'Projekter',
       liveProject: 'Se projekt',
       viewPdf: 'Se PDF',
+      viewProject: 'Se projekt',
     },
     footer: {
       label: 'Kontakt',
@@ -169,6 +170,7 @@ export const t = {
       heading: 'Projects',
       liveProject: 'Live Project',
       viewPdf: 'View PDF',
+      viewProject: 'View Project',
     },
     footer: {
       label: 'Contact',
