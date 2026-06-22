@@ -112,13 +112,25 @@ function FlipCard({ item, lang }: { item: ContactItem; lang: 'da' | 'en' }) {
   const [flipped, setFlipped] = useState(false)
   const Icon = item.icon
 
+  function handleClick(e: React.MouseEvent) {
+    // On touch devices, first tap flips — second tap navigates
+    const isTouch = window.matchMedia('(hover: none)').matches
+    if (isTouch) {
+      if (!flipped) { e.preventDefault(); setFlipped(true) }
+      else { setFlipped(false) }
+    }
+  }
+
   return (
-    <div
-      className="relative cursor-pointer"
+    <a
+      href={item.href}
+      target={item.href.startsWith('http') ? '_blank' : undefined}
+      rel="noopener noreferrer"
+      className="block relative"
       style={{ perspective: '1000px', height: '160px' }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
-      onClick={() => window.open(item.href, item.href.startsWith('http') ? '_blank' : '_self')}
+      onClick={handleClick}
     >
       <motion.div
         animate={{ rotateY: flipped ? 180 : 0 }}
@@ -151,7 +163,7 @@ function FlipCard({ item, lang }: { item: ContactItem; lang: 'da' | 'en' }) {
           <CardBack type={item.backType} />
         </div>
       </motion.div>
-    </div>
+    </a>
   )
 }
 
