@@ -30,7 +30,7 @@ export default function HeroSection() {
       </FadeIn>
 
       {/* ── MOBILE layout ── */}
-      <div className="flex flex-col items-center px-5 pt-8 pb-10 gap-6 sm:hidden flex-1 justify-center">
+      <div className="flex flex-col items-center px-5 pt-4 pb-10 gap-5 sm:hidden flex-1 justify-start mt-6">
 
         {/* Photo */}
         <FadeIn delay={0.2} y={20}>
