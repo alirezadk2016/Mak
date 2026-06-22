@@ -13,7 +13,7 @@ export const t = {
     },
     about: {
       heading: 'Om mig',
-      bio: 'Teknologi har altid været min passion. Da jeg flyttede til Danmark, tog jeg det bevidste valg om at følge den — og gennemførte IT-supporteruddannelsen på Aarhus Tech med succes. Min vej hertil har ført mig gennem marketing og SEO, hvilket har gjort mig til en alsidig og løsningsorienteret person. Jeg har arbejdet med mennesker i alle aldre og ved, hvordan man tackler selv de sværeste IT-udfordringer roligt og tydeligt — uanset om det er en 16-årig eller en 70-årig på den anden side af bordet. Jeg er altid smilende, skaber en god stemning og er konstant klar til at tage nye udfordringer op.',
+      bio: 'Inden jeg kom til Danmark, arbejdede jeg med webudvikling, SEO og digital markedsføring — og det var der, min interesse for teknologi virkelig tog fart. Da jeg slog mig ned i Danmark, valgte jeg at bygge videre på den passion og uddannede mig til IT-supporter på Aarhus Tech. Jeg har erfaring med mennesker på tværs af generationer og formår at løse tekniske udfordringer på en rolig og klar måde — uanset alder eller baggrund. Jeg er engageret, smilende og trives i miljøer, hvor der er plads til at lære og vokse.',
       stats: [
         { num: '3+', label: 'Virksomheder' },
         { num: '2026', label: 'Aarhus Tech' },
@@ -111,7 +111,7 @@ export const t = {
     },
     about: {
       heading: 'About me',
-      bio: 'Technology has always been my passion. When I moved to Denmark, I made a deliberate choice to pursue it — and successfully completed my IT Support education at Aarhus Tech. My background spans marketing and SEO, which shaped me into a versatile and solution-oriented professional. I have worked with people of all ages and know how to handle even the toughest IT challenges calmly and clearly — whether it is a 16-year-old or a 70-year-old on the other side of the table. I always bring a smile, create a positive atmosphere, and am constantly ready to take on new challenges.',
+      bio: 'Before moving to Denmark, I worked in web design, SEO and digital marketing — and that is where my passion for technology truly took shape. When I settled in Denmark, I chose to build on that foundation and trained as an IT Support Technician at Aarhus Tech. I have experience working with people across all generations and am able to handle technical challenges calmly and clearly, regardless of age or background. I am engaged, always bring a positive energy, and thrive in environments where there is room to learn and grow.',
       stats: [
         { num: '3+', label: 'Companies' },
         { num: '2026', label: 'Aarhus Tech' },
