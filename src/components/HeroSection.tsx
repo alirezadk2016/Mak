@@ -8,7 +8,7 @@ export default function HeroSection() {
       {/* Navbar */}
       <FadeIn delay={0} y={-20}>
         <nav className="flex justify-between px-6 md:px-10 pt-6 md:pt-8">
-          {['About', 'Price', 'Projects', 'Contact'].map((link) => (
+          {['About', 'Experience', 'Projects', 'Contact'].map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}

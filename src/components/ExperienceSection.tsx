@@ -29,6 +29,7 @@ const experiences = [
 export default function ExperienceSection() {
   return (
     <section
+      id="experience"
       className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 relative z-10"
       style={{ background: '#0C0C0C' }}
     >
