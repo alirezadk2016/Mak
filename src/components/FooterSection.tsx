@@ -9,97 +9,87 @@ const links = [
 
 export default function FooterSection() {
   return (
-    <section id="contact" style={{ background: '#0C0C0C' }} className="overflow-hidden">
-      <div className="px-5 sm:px-10 md:px-16 pt-16 sm:pt-24 pb-0">
+    <section id="contact" style={{ background: '#0C0C0C' }}>
 
-        {/* Label */}
-        <div className="flex items-center gap-3 mb-8 sm:mb-10">
-          <span className="w-1.5 h-1.5 rounded-full bg-white opacity-40" />
-          <span className="text-[11px] uppercase tracking-[0.3em]" style={{ color: '#D7E2EA', opacity: 0.35 }}>
-            Contact
-          </span>
-        </div>
+      {/* Top: label + subtext */}
+      <div className="px-5 sm:px-10 md:px-16 pt-20 sm:pt-32">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-[11px] uppercase tracking-[0.35em] mb-6"
+          style={{ color: '#D7E2EA', opacity: 0.35 }}
+        >
+          · Contact
+        </motion.p>
 
-        {/* Heading */}
-        <div className="mb-6 sm:mb-10">
-          <p
-            className="font-light uppercase tracking-[0.2em]"
-            style={{ color: '#D7E2EA', opacity: 0.45, fontSize: 'clamp(0.75rem, 1.5vw, 1rem)' }}
-          >
-            Lad os tage en snak — skriv til mig
-          </p>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-light mb-10 sm:mb-14 max-w-sm"
+          style={{ color: '#D7E2EA', opacity: 0.45, fontSize: 'clamp(0.9rem, 1.4vw, 1.1rem)', lineHeight: 1.7 }}
+        >
+          Lad os tage en snak.<br />Skriv til mig — jeg svarer hurtigt.
+        </motion.p>
 
-        {/* Big email */}
-        <div className="mb-10 sm:mb-16">
+        {/* Giant email */}
+        <div className="overflow-hidden mb-16 sm:mb-24">
           <motion.a
             href="mailto:alirezadk2016@gmail.com"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 80 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
             className="group relative inline-block"
+            style={{ fontSize: 'clamp(2.2rem, 6.5vw, 90px)', color: '#D7E2EA', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 1, textTransform: 'uppercase' }}
           >
-            <span
-              className="font-black uppercase leading-none block"
-              style={{
-                fontSize: 'clamp(1.4rem, 4.5vw, 64px)',
-                color: '#D7E2EA',
-                letterSpacing: '-0.02em',
-                wordBreak: 'break-all',
-              }}
-            >
-              alirezadk2016@gmail.com
-            </span>
-            <span
-              className="absolute left-0 bottom-0 h-[2px] w-0 group-hover:w-full transition-all duration-500"
-              style={{ background: '#D7E2EA' }}
-            />
+            alirezadk2016
+            <br className="sm:hidden" />
+            @gmail.com
+            <span className="hidden sm:block absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-500" style={{ background: '#D7E2EA' }} />
           </motion.a>
         </div>
+      </div>
 
-        {/* Links grid */}
-        <div className="border-t border-[#D7E2EA]/10 pt-8 pb-10 grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-4">
+      {/* Links row */}
+      <div className="border-t border-[#D7E2EA]/10">
+        <div className="px-5 sm:px-10 md:px-16 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8">
           {links.map(({ label, value, href }, i) => (
             <motion.a
               key={label}
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="flex flex-col gap-2 hover:opacity-60 transition-opacity duration-200"
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className="flex flex-col gap-2 hover:opacity-50 transition-opacity duration-200"
             >
-              <span className="text-[10px] uppercase tracking-[0.25em]" style={{ color: '#D7E2EA', opacity: 0.35 }}>
+              <span style={{ color: '#D7E2EA', opacity: 0.3, fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
                 {label}
               </span>
-              <span className="font-medium text-sm sm:text-base" style={{ color: '#D7E2EA' }}>
+              <span style={{ color: '#D7E2EA', fontSize: '0.95rem', fontWeight: 500 }}>
                 {value}
               </span>
             </motion.a>
           ))}
         </div>
-
       </div>
 
       {/* Bottom bar */}
-      <div
-        className="px-5 sm:px-10 md:px-16 py-5 border-t"
-        style={{ borderColor: 'rgba(215,226,234,0.08)' }}
-      >
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.08)' }} />
-          <div
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full border flex-shrink-0"
-            style={{ borderColor: 'rgba(215,226,234,0.12)' }}
-          >
-            <span className="text-[10px]" style={{ color: '#D7E2EA', opacity: 0.3 }}>&lt;&gt;</span>
-            <span className="text-[9px] uppercase tracking-[0.2em]" style={{ color: '#D7E2EA', opacity: 0.25 }}>Crafted by</span>
-            <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#D7E2EA', opacity: 0.5 }}>MAK</span>
+      <div className="border-t border-[#D7E2EA]/8">
+        <div className="px-5 sm:px-10 md:px-16 py-6 flex items-center gap-4">
+          <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.07)' }} />
+          <div className="flex items-center gap-2 px-5 py-2 rounded-full border flex-shrink-0" style={{ borderColor: 'rgba(215,226,234,0.1)' }}>
+            <span style={{ color: '#D7E2EA', opacity: 0.25, fontSize: '10px' }}>&lt;&gt;</span>
+            <span style={{ color: '#D7E2EA', opacity: 0.2, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase' }}>Crafted by</span>
+            <span style={{ color: '#D7E2EA', opacity: 0.45, fontSize: '10px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>MAK</span>
           </div>
-          <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.08)' }} />
+          <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.07)' }} />
         </div>
       </div>
 
