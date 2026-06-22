@@ -69,8 +69,8 @@ export const t = {
       items: [
         { slug: 'yousee', company: 'YouSee', role: 'Kundeservice & Administration', period: 'IGU — Arbejde' },
         { slug: 'fourcom', company: 'Fourcom', role: 'IT Support Praktikant', period: 'Praktik' },
-        { slug: 'folkehuse', company: 'Folkehuse Aarhus', role: 'IT Support — Skolepraktik', period: 'Skolepraktik' },
-        { slug: 'aarhustech', company: 'Aarhus Tech', role: 'IT Support — Eksamensvagt', period: 'Frivillig' },
+        { slug: 'folkehuse', company: 'Folkehuse Aarhus', role: 'IT Support — Frivillig', period: 'Frivillig' },
+        { slug: 'aarhustech', company: 'Aarhus Tech', role: 'IT Support — Skolepraktik', period: 'Skolepraktik' },
       ],
     },
     projects: {
@@ -167,8 +167,8 @@ export const t = {
       items: [
         { slug: 'yousee', company: 'YouSee', role: 'Customer Service & Administration', period: 'IGU — Work' },
         { slug: 'fourcom', company: 'Fourcom', role: 'IT Support Intern', period: 'Internship' },
-        { slug: 'folkehuse', company: 'Folkehuse Aarhus', role: 'IT Support — School Placement', period: 'School Placement' },
-        { slug: 'aarhustech', company: 'Aarhus Tech', role: 'IT Support — Exam Supervisor', period: 'Volunteer' },
+        { slug: 'folkehuse', company: 'Folkehuse Aarhus', role: 'IT Support — Volunteer', period: 'Volunteer' },
+        { slug: 'aarhustech', company: 'Aarhus Tech', role: 'IT Support — School Placement', period: 'School Placement' },
       ],
     },
     projects: {
