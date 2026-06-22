@@ -2,6 +2,12 @@ import FadeIn from './FadeIn'
 import ContactButton from './ContactButton'
 import AnimatedText from './AnimatedText'
 
+const skills = [
+  'Windows Server', 'Active Directory', 'DNS & DHCP', 'GPO',
+  'VMware', 'Linux', 'Netværk', 'IT-sikkerhed',
+  'Hardware Support', 'React', 'TypeScript', 'Web Design',
+]
+
 export default function AboutSection() {
   return (
     <section
@@ -9,38 +15,83 @@ export default function AboutSection() {
       className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden"
       style={{ background: '#0C0C0C' }}
     >
-      {/* Decorative corners */}
-      <FadeIn delay={0.1} x={-80} y={0} duration={0.9} className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%]">
-        <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png" alt="" className="w-[120px] sm:w-[160px] md:w-[210px]" />
+      {/* Decorative skill tags floating */}
+      <FadeIn delay={0.1} x={-60} y={0} duration={1} className="absolute top-[8%] left-[2%] md:left-[4%] hidden sm:block">
+        <div className="flex flex-col gap-2">
+          {['Windows Server', 'Active Directory', 'VMware'].map(s => (
+            <span key={s} className="text-xs uppercase tracking-widest px-3 py-1.5 rounded-full border border-[#D7E2EA]/20 text-[#D7E2EA]/40 whitespace-nowrap">{s}</span>
+          ))}
+        </div>
       </FadeIn>
-      <FadeIn delay={0.25} x={-80} y={0} duration={0.9} className="absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%]">
-        <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png" alt="" className="w-[100px] sm:w-[140px] md:w-[180px]" />
+      <FadeIn delay={0.2} x={-60} y={0} duration={1} className="absolute bottom-[10%] left-[2%] md:left-[6%] hidden sm:block">
+        <div className="flex flex-col gap-2">
+          {['Linux', 'DNS & DHCP', 'GPO'].map(s => (
+            <span key={s} className="text-xs uppercase tracking-widest px-3 py-1.5 rounded-full border border-[#D7E2EA]/20 text-[#D7E2EA]/40 whitespace-nowrap">{s}</span>
+          ))}
+        </div>
       </FadeIn>
-      <FadeIn delay={0.15} x={80} y={0} duration={0.9} className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%]">
-        <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png" alt="" className="w-[120px] sm:w-[160px] md:w-[210px]" />
+      <FadeIn delay={0.15} x={60} y={0} duration={1} className="absolute top-[8%] right-[2%] md:right-[4%] hidden sm:block">
+        <div className="flex flex-col gap-2 items-end">
+          {['React', 'TypeScript', 'Web Design'].map(s => (
+            <span key={s} className="text-xs uppercase tracking-widest px-3 py-1.5 rounded-full border border-[#D7E2EA]/20 text-[#D7E2EA]/40 whitespace-nowrap">{s}</span>
+          ))}
+        </div>
       </FadeIn>
-      <FadeIn delay={0.3} x={80} y={0} duration={0.9} className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%]">
-        <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png" alt="" className="w-[130px] sm:w-[170px] md:w-[220px]" />
+      <FadeIn delay={0.3} x={60} y={0} duration={1} className="absolute bottom-[10%] right-[2%] md:right-[6%] hidden sm:block">
+        <div className="flex flex-col gap-2 items-end">
+          {['IT-sikkerhed', 'Hardware', 'Netværk'].map(s => (
+            <span key={s} className="text-xs uppercase tracking-widest px-3 py-1.5 rounded-full border border-[#D7E2EA]/20 text-[#D7E2EA]/40 whitespace-nowrap">{s}</span>
+          ))}
+        </div>
       </FadeIn>
 
       {/* Content */}
-      <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16 z-10">
+      <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16 z-10 max-w-3xl text-center">
         <FadeIn delay={0} y={40}>
           <h2
-            className="hero-heading font-black uppercase leading-none tracking-tight text-center"
+            className="hero-heading font-black uppercase leading-none tracking-tight"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >
             About me
           </h2>
         </FadeIn>
 
-        <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
+        <div className="flex flex-col items-center gap-10 sm:gap-12">
           <AnimatedText
-            text="With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
-            className="font-medium text-center leading-relaxed max-w-[560px]"
+            text="Nyuddannet IT-supporter fra Aarhus Tech med solid erfaring inden for netværk, servere og brugersupport. Jeg kombinerer teknisk præcision med et øje for design — og jeg er klar til at bidrage fra dag ét."
+            className="font-medium text-center leading-relaxed"
             style={{ color: '#D7E2EA', fontSize: 'clamp(1rem, 2vw, 1.35rem)' } as React.CSSProperties}
           />
-          <ContactButton />
+
+          {/* Stats */}
+          <FadeIn delay={0.3} y={20}>
+            <div className="grid grid-cols-3 gap-8 sm:gap-16 mt-2">
+              {[
+                { num: '3+', label: 'Virksomheder' },
+                { num: '2026', label: 'Aarhus Tech' },
+                { num: '6', label: 'IT Services' },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center gap-1">
+                  <span
+                    className="font-black leading-none"
+                    style={{ color: '#D7E2EA', fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+                  >
+                    {stat.num}
+                  </span>
+                  <span
+                    className="uppercase tracking-widest text-xs"
+                    style={{ color: '#D7E2EA', opacity: 0.4 }}
+                  >
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.4} y={20}>
+            <ContactButton />
+          </FadeIn>
         </div>
       </div>
     </section>
