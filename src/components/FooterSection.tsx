@@ -20,6 +20,16 @@ export default function FooterSection() {
           </span>
         </div>
 
+        {/* Heading */}
+        <div className="mb-6 sm:mb-10">
+          <p
+            className="font-light uppercase tracking-[0.2em]"
+            style={{ color: '#D7E2EA', opacity: 0.45, fontSize: 'clamp(0.75rem, 1.5vw, 1rem)' }}
+          >
+            Lad os tage en snak — skriv til mig
+          </p>
+        </div>
+
         {/* Big email */}
         <div className="mb-10 sm:mb-16">
           <motion.a
@@ -76,19 +86,20 @@ export default function FooterSection() {
 
       {/* Bottom bar */}
       <div
-        className="flex items-center justify-between px-5 sm:px-10 md:px-16 py-5 border-t"
+        className="px-5 sm:px-10 md:px-16 py-5 border-t"
         style={{ borderColor: 'rgba(215,226,234,0.08)' }}
       >
-        <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: '#D7E2EA', opacity: 0.2 }}>
-          © 2026 Alireza Makvandi
-        </span>
-        <div
-          className="flex items-center gap-2 px-4 py-1.5 rounded-full border"
-          style={{ borderColor: 'rgba(215,226,234,0.12)' }}
-        >
-          <span className="text-[10px]" style={{ color: '#D7E2EA', opacity: 0.3 }}>&lt;&gt;</span>
-          <span className="text-[9px] uppercase tracking-[0.2em]" style={{ color: '#D7E2EA', opacity: 0.25 }}>Crafted by</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#D7E2EA', opacity: 0.5 }}>MAK</span>
+        <div className="flex items-center gap-4">
+          <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.08)' }} />
+          <div
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full border flex-shrink-0"
+            style={{ borderColor: 'rgba(215,226,234,0.12)' }}
+          >
+            <span className="text-[10px]" style={{ color: '#D7E2EA', opacity: 0.3 }}>&lt;&gt;</span>
+            <span className="text-[9px] uppercase tracking-[0.2em]" style={{ color: '#D7E2EA', opacity: 0.25 }}>Crafted by</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#D7E2EA', opacity: 0.5 }}>MAK</span>
+          </div>
+          <div className="flex-1 h-px" style={{ background: 'rgba(215,226,234,0.08)' }} />
         </div>
       </div>
 
