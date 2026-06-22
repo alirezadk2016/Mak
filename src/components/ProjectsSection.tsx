@@ -113,7 +113,16 @@ function ProjectCard({
           </div>
 
           {/* Thin divider */}
-          <div className="mx-5 sm:mx-8 mb-4 sm:mb-5 h-px" style={{ background: 'rgba(215,226,234,0.06)' }} />
+          {(project.col1img1 || project.col2img) && <div className="mx-5 sm:mx-8 mb-4 sm:mb-5 h-px" style={{ background: 'rgba(215,226,234,0.06)' }} />}
+
+          {/* Coming Soon placeholder */}
+          {!project.col2img && (
+            <div className="px-5 sm:px-8 pb-8 sm:pb-10 flex items-center justify-center" style={{ minHeight: '120px' }}>
+              <span style={{ color: '#D7E2EA', opacity: 0.12, fontSize: 'clamp(0.75rem, 1.5vw, 1rem)', letterSpacing: '0.4em', textTransform: 'uppercase' }}>
+                {project.category[lang]}
+              </span>
+            </div>
+          )}
 
           {/* Images */}
           {(project.col1img1 || project.col2img) && <div className="px-3 sm:px-5 pb-3 sm:pb-5">
