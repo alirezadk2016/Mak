@@ -117,7 +117,7 @@ function TiltCard({ exp, viewDetails, index, total }: { exp: { slug: string; com
         <div className="w-1 flex-shrink-0" style={{ background: accent }} />
 
         {/* Screenshot thumbnail */}
-        <div className="relative flex-shrink-0 overflow-hidden" style={{ width: '42%', aspectRatio: '4/3' }}>
+        <div className="relative flex-shrink-0 overflow-hidden" style={{ width: '48%', aspectRatio: '4/3' }}>
           <img
             src={screenshots[exp.slug]}
             alt={exp.company}
