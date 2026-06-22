@@ -19,9 +19,7 @@ export default function HeroSection() {
             </a>
           ))}
           <a
-            href="https://dk.linkedin.com/in/alireza-makvandi-446704301"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="text-sm md:text-lg lg:text-[1.4rem] font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70"
             style={{ color: '#D7E2EA' }}
           >

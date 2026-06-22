@@ -31,6 +31,16 @@ const projects = [
   },
   {
     num: '04',
+    category: 'Skole — Aarhus Tech',
+    name: 'Svendeprøve Projekt',
+    href: '/Svendepr%C3%B8ve-Projekt.docx%20(2).pdf',
+    label: 'View PDF',
+    col1img1: '/photo_2026-05-08_09-04-19.jpg',
+    col1img2: '/photo_2026-05-08_09-04-19.jpg',
+    col2img: '/photo_2026-05-08_09-04-19.jpg',
+  },
+  {
+    num: '05',
     category: 'Client',
     name: 'Solaris Digital',
     col1img1: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
@@ -66,7 +76,7 @@ function ProjectCard({ project, index, total }: { project: typeof projects[0]; i
                 <span className="text-[#D7E2EA] font-medium uppercase text-base sm:text-xl md:text-2xl">{project.name}</span>
               </div>
             </div>
-            <LiveProjectButton href={project.href} />
+            <LiveProjectButton href={project.href} label={project.label} />
           </div>
 
           {/* Images */}
