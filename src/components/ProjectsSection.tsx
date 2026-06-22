@@ -19,16 +19,6 @@ const projects = [
   },
   {
     num: '02',
-    category: { da: 'Kommer snart', en: 'Coming Soon' },
-    name: '———',
-    href: null,
-    external: false,
-    col1img1: '',
-    col1img2: '',
-    col2img: '',
-  },
-  {
-    num: '03',
     category: { da: 'Skole — Aarhus Tech', en: 'School — Aarhus Tech' },
     name: 'Svendeprøve',
     href: '/projects/svendeproeve',
@@ -36,6 +26,16 @@ const projects = [
     col1img1: '/photo_2026-05-08_09-04-19.jpg',
     col1img2: '/photo_2026-05-08_09-04-19.jpg',
     col2img: '/photo_2026-05-08_09-04-19.jpg',
+  },
+  {
+    num: '03',
+    category: { da: 'Kommer snart', en: 'Coming Soon' },
+    name: '———',
+    href: null,
+    external: false,
+    col1img1: '',
+    col1img2: '',
+    col2img: '',
   },
 ]
 
@@ -64,7 +64,7 @@ function ProjectCard({
     <div
       ref={cardRef}
       className="flex items-start justify-center"
-      style={{ height: '88vh', paddingTop: index * 18 + 'px' }}
+      style={{ height: project.col2img ? '88vh' : 'auto', paddingTop: index * 18 + 'px' }}
     >
       <motion.div
         style={{ scale, top: 72 + index * 18 + 'px', position: 'sticky' }}
@@ -116,7 +116,7 @@ function ProjectCard({
           <div className="mx-5 sm:mx-8 mb-4 sm:mb-5 h-px" style={{ background: 'rgba(215,226,234,0.06)' }} />
 
           {/* Images */}
-          <div className="px-3 sm:px-5 pb-3 sm:pb-5">
+          {(project.col1img1 || project.col2img) && <div className="px-3 sm:px-5 pb-3 sm:pb-5">
             {/* Desktop: two-column */}
             <div className="hidden sm:flex gap-3">
               <div className="flex flex-col gap-3" style={{ width: '38%' }}>
@@ -151,6 +151,7 @@ function ProjectCard({
               />
             </div>
           </div>
+          }
         </div>
       </motion.div>
     </div>
