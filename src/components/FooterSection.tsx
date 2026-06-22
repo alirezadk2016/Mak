@@ -18,7 +18,7 @@ export default function FooterSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-3 mb-12 sm:mb-16"
+          className="flex items-center gap-3 mb-8 sm:mb-10"
         >
           <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#D7E2EA', opacity: 0.4 }} />
           <span style={{ color: '#D7E2EA', opacity: 0.35, fontSize: '11px', letterSpacing: '0.35em', textTransform: 'uppercase' }}>
@@ -27,7 +27,7 @@ export default function FooterSection() {
         </motion.div>
 
         {/* Heading + email side by side on desktop, stacked on mobile */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8 sm:gap-12 mb-16 sm:mb-20">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8 sm:gap-12 mb-10 sm:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
