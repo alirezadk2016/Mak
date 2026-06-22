@@ -103,6 +103,7 @@ export default function AboutSection() {
 
         <div className="flex flex-col items-center gap-10 sm:gap-12">
           <AnimatedText
+            key={tx.bio}
             text={tx.bio}
             className="font-medium text-center leading-relaxed"
             style={{ color: '#D7E2EA', fontSize: 'clamp(1rem, 2vw, 1.35rem)' } as React.CSSProperties}
