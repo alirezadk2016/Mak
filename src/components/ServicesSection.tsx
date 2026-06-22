@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import FadeIn from './FadeIn'
 import { useLang } from '../contexts/LanguageContext'
 import { t } from '../translations'
@@ -5,6 +7,7 @@ import { t } from '../translations'
 export default function ServicesSection() {
   const { lang } = useLang()
   const tx = t[lang].services
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
 
   return (
     <section
@@ -24,20 +27,37 @@ export default function ServicesSection() {
         {tx.items.map((s, i) => (
           <FadeIn key={s.num} delay={i * 0.08} y={20}>
             <div
-              className="flex items-start gap-6 md:gap-10 py-8 sm:py-10 md:py-12"
+              className="relative flex items-start gap-4 sm:gap-6 md:gap-10 py-7 sm:py-10 md:py-12 cursor-default overflow-hidden"
               style={{
                 borderBottom: '1px solid rgba(12,12,12,0.12)',
                 borderTop: i === 0 ? '1px solid rgba(12,12,12,0.12)' : undefined,
               }}
+              onMouseEnter={() => setHoveredIdx(i)}
+              onMouseLeave={() => setHoveredIdx(null)}
             >
-              <span className="font-black leading-none flex-shrink-0" style={{ color: '#0C0C0C', fontSize: 'clamp(2rem, 8vw, 140px)' }}>
+              {/* Left border highlight */}
+              <motion.div
+                className="absolute left-0 top-0 w-[3px] rounded-full"
+                style={{ background: 'linear-gradient(180deg, #7c3aed, #2563eb)', originY: 0 }}
+                initial={{ scaleY: 0, opacity: 0 }}
+                animate={hoveredIdx === i ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              />
+
+              <motion.span
+                className="font-black leading-none flex-shrink-0"
+                style={{ color: '#0C0C0C', fontSize: 'clamp(1.8rem, 6vw, 110px)' }}
+                animate={{ x: hoveredIdx === i ? 8 : 0 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+              >
                 {s.num}
-              </span>
-              <div className="flex flex-col gap-3 pt-2 w-full">
-                <span className="font-medium uppercase" style={{ color: '#0C0C0C', fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}>
+              </motion.span>
+
+              <div className="flex flex-col gap-2 sm:gap-3 pt-1 sm:pt-2 w-full">
+                <span className="font-medium uppercase" style={{ color: '#0C0C0C', fontSize: 'clamp(0.9rem, 2vw, 2.1rem)' }}>
                   {s.name}
                 </span>
-                <span className="font-light leading-relaxed max-w-2xl" style={{ color: '#0C0C0C', opacity: 0.6, fontSize: 'clamp(0.85rem, 1.6vw, 1.15rem)' }}>
+                <span className="font-light leading-relaxed max-w-2xl" style={{ color: '#0C0C0C', opacity: 0.6, fontSize: 'clamp(0.8rem, 1.4vw, 1.1rem)' }}>
                   {s.desc}
                 </span>
                 <div className="flex flex-wrap gap-2 mt-1">

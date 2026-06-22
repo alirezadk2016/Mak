@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
+import CustomCursor from './components/CustomCursor'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import ServicesSection from './components/ServicesSection'
@@ -25,6 +26,7 @@ function Home() {
 export default function App() {
   return (
     <LanguageProvider>
+      <CustomCursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/experience/:slug" element={<ExperienceDetail />} />
