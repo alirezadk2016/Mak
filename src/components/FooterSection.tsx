@@ -35,7 +35,7 @@ export default function FooterSection() {
   const tx = t[lang].footer
 
   return (
-    <section id="contact" style={{ background: '#0C0C0C' }}>
+    <section id="contact" style={{ background: '#0C0C0C', position: 'relative', zIndex: 20 }}>
       <div className="px-5 sm:px-10 md:px-16 pt-20 sm:pt-32 pb-0">
 
         {/* Label */}
