@@ -62,28 +62,8 @@ export default function HeroSection() {
           </p>
         </FadeIn>
 
-        {/* Contact info */}
-        <FadeIn delay={0.5} y={20}>
-          <div className="flex flex-col items-center gap-2 w-full">
-            <a
-              href="tel:+4591488843"
-              className="w-full text-center py-3 rounded-full border text-xs uppercase tracking-widest transition-opacity hover:opacity-60"
-              style={{ color: '#D7E2EA', borderColor: 'rgba(215,226,234,0.2)', fontSize: '0.7rem' }}
-            >
-              +45 91 48 88 43
-            </a>
-            <a
-              href="mailto:alirezadk2016@gmail.com"
-              className="w-full text-center py-3 rounded-full border text-xs uppercase tracking-widest transition-opacity hover:opacity-60"
-              style={{ color: '#D7E2EA', borderColor: 'rgba(215,226,234,0.2)', fontSize: '0.7rem' }}
-            >
-              alirezadk2016@gmail.com
-            </a>
-          </div>
-        </FadeIn>
-
         {/* CTA */}
-        <FadeIn delay={0.6} y={20}>
+        <FadeIn delay={0.5} y={20}>
           <ContactButton />
         </FadeIn>
 
