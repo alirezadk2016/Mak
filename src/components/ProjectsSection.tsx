@@ -204,7 +204,7 @@ export default function ProjectsSection() {
             index={i}
             total={projects.length}
             lang={lang}
-            btnLabel={p.num === '04' ? tx.viewProject : tx.liveProject}
+            btnLabel={p.href === '/projects/svendeproeve' ? tx.viewProject : tx.liveProject}
           />
         ))}
       </div>

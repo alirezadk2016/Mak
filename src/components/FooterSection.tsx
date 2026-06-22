@@ -189,60 +189,59 @@ function MobileFlipCard({ item, lang }: { item: ContactItem; lang: 'da' | 'en' }
   const [flipped, setFlipped] = useState(false)
   const touchStartX = useRef<number | null>(null)
   const Icon = item.icon
+  const ease = [0.22, 1, 0.36, 1] as const
+  const dur = 0.45
 
   function onTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.touches[0].clientX
   }
-
   function onTouchEnd(e: React.TouchEvent) {
     if (touchStartX.current === null) return
-    const diff = touchStartX.current - e.changedTouches[0].clientX
-    if (Math.abs(diff) > 40) {
+    if (Math.abs(touchStartX.current - e.changedTouches[0].clientX) > 40)
       setFlipped(f => !f)
-    }
     touchStartX.current = null
   }
 
   return (
     <div
       className="sm:hidden absolute inset-0"
-      style={{ perspective: '1000px' }}
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
+      {/* Front — rotates out */}
       <motion.div
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        style={{ transformStyle: 'preserve-3d', width: '100%', height: '100%', position: 'relative' }}
+        animate={{ rotateY: flipped ? -90 : 0, opacity: flipped ? 0 : 1 }}
+        transition={{ duration: dur, ease }}
+        className="absolute inset-0 flex flex-col gap-4 rounded-[20px] border border-[#D7E2EA]/10 p-5"
+        style={{ pointerEvents: flipped ? 'none' : 'auto' }}
       >
-        {/* Front */}
-        <div
-          className="absolute inset-0 flex flex-col gap-4 rounded-[20px] border border-[#D7E2EA]/10 p-5"
-          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
-        >
-          <div className="flex items-center justify-between">
-            <span style={{ color: '#D7E2EA', opacity: 0.25, fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
-              {typeof item.label === 'object' ? item.label[lang] : item.label}
-            </span>
-            <div className="w-8 h-8 rounded-full border border-[#D7E2EA]/15 flex items-center justify-center">
-              <Icon size={14} style={{ color: '#D7E2EA', opacity: 0.5 }} strokeWidth={1.5} />
-            </div>
+        <div className="flex items-center justify-between">
+          <span style={{ color: '#D7E2EA', opacity: 0.25, fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
+            {typeof item.label === 'object' ? item.label[lang] : item.label}
+          </span>
+          <div className="w-8 h-8 rounded-full border border-[#D7E2EA]/15 flex items-center justify-center">
+            <Icon size={14} style={{ color: '#D7E2EA', opacity: 0.5 }} strokeWidth={1.5} />
           </div>
-          <span style={{ color: '#D7E2EA', fontSize: '0.85rem', fontWeight: 500, opacity: 0.85 }} className="leading-snug mt-auto">
-            {item.value}
-          </span>
-          <span style={{ color: '#D7E2EA', opacity: 0.15, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-            ← swipe →
-          </span>
         </div>
-        {/* Back */}
-        <div
-          className="absolute inset-0"
-          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-          onClick={() => window.open(item.href, item.href.startsWith('http') ? '_blank' : '_self')}
-        >
-          <CardBack type={item.backType} />
-        </div>
+        <span style={{ color: '#D7E2EA', fontSize: '0.85rem', fontWeight: 500, opacity: 0.85 }} className="leading-snug mt-auto">
+          {item.value}
+        </span>
+        <span style={{ color: '#D7E2EA', opacity: 0.15, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+          ← swipe →
+        </span>
+      </motion.div>
+
+      {/* Back — rotates in */}
+      <motion.div
+        animate={{ rotateY: flipped ? 0 : 90, opacity: flipped ? 1 : 0 }}
+        transition={{ duration: dur, ease, delay: flipped ? dur * 0.5 : 0 }}
+        className="absolute inset-0"
+        style={{ pointerEvents: flipped ? 'auto' : 'none' }}
+        onClick={() => {
+          if (flipped) window.open(item.href, item.href.startsWith('http') ? '_blank' : '_self')
+        }}
+      >
+        <CardBack type={item.backType} />
       </motion.div>
     </div>
   )
