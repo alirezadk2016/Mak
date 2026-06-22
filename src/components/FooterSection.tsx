@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Instagram, Phone } from 'lucide-react'
 import { useLang } from '../contexts/LanguageContext'
@@ -179,24 +179,72 @@ function FlipCard({ item, lang }: { item: ContactItem; lang: 'da' | 'en' }) {
         </div>
       </motion.div>
 
-      {/* Mobile: simple card, no flip */}
-      <motion.div
-        whileTap={{ scale: 0.97 }}
-        className="sm:hidden absolute inset-0 flex flex-col gap-4 rounded-[20px] border border-[#D7E2EA]/10 p-5 active:border-[#D7E2EA]/30 transition-colors duration-150"
-      >
-        <div className="flex items-center justify-between">
-          <span style={{ color: '#D7E2EA', opacity: 0.25, fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
-            {typeof item.label === 'object' ? item.label[lang] : item.label}
-          </span>
-          <div className="w-8 h-8 rounded-full border border-[#D7E2EA]/15 flex items-center justify-center">
-            <Icon size={14} style={{ color: '#D7E2EA', opacity: 0.5 }} strokeWidth={1.5} />
-          </div>
-        </div>
-        <span style={{ color: '#D7E2EA', fontSize: '0.85rem', fontWeight: 500, opacity: 0.85 }} className="leading-snug mt-auto">
-          {item.value}
-        </span>
-      </motion.div>
+      {/* Mobile: swipe left/right to flip */}
+      <MobileFlipCard item={item} lang={lang} />
     </a>
+  )
+}
+
+function MobileFlipCard({ item, lang }: { item: ContactItem; lang: 'da' | 'en' }) {
+  const [flipped, setFlipped] = useState(false)
+  const touchStartX = useRef<number | null>(null)
+  const Icon = item.icon
+
+  function onTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 40) {
+      setFlipped(f => !f)
+    }
+    touchStartX.current = null
+  }
+
+  return (
+    <div
+      className="sm:hidden absolute inset-0"
+      style={{ perspective: '1000px' }}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
+      <motion.div
+        animate={{ rotateY: flipped ? 180 : 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        style={{ transformStyle: 'preserve-3d', width: '100%', height: '100%', position: 'relative' }}
+      >
+        {/* Front */}
+        <div
+          className="absolute inset-0 flex flex-col gap-4 rounded-[20px] border border-[#D7E2EA]/10 p-5"
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
+        >
+          <div className="flex items-center justify-between">
+            <span style={{ color: '#D7E2EA', opacity: 0.25, fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase' }}>
+              {typeof item.label === 'object' ? item.label[lang] : item.label}
+            </span>
+            <div className="w-8 h-8 rounded-full border border-[#D7E2EA]/15 flex items-center justify-center">
+              <Icon size={14} style={{ color: '#D7E2EA', opacity: 0.5 }} strokeWidth={1.5} />
+            </div>
+          </div>
+          <span style={{ color: '#D7E2EA', fontSize: '0.85rem', fontWeight: 500, opacity: 0.85 }} className="leading-snug mt-auto">
+            {item.value}
+          </span>
+          <span style={{ color: '#D7E2EA', opacity: 0.15, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+            ← swipe →
+          </span>
+        </div>
+        {/* Back */}
+        <div
+          className="absolute inset-0"
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          onClick={() => window.open(item.href, item.href.startsWith('http') ? '_blank' : '_self')}
+        >
+          <CardBack type={item.backType} />
+        </div>
+      </motion.div>
+    </div>
   )
 }
 
