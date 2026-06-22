@@ -31,7 +31,7 @@ const projects = [
     num: '03',
     category: { da: 'Personligt projekt', en: 'Personal Project' },
     name: 'Gaming PC Build',
-    href: null,
+    href: '/projects/gaming-pc',
     external: false,
     col1img1: '/gaming-pc.jpeg',
     col1img2: '/gaming-pc.jpeg',

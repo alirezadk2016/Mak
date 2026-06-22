@@ -9,6 +9,7 @@ import ExperienceSection from './components/ExperienceSection'
 import ExperienceDetail from './pages/ExperienceDetail'
 import SvendeproevePage from './pages/SvendeproevePage'
 import EliteVaskPage from './pages/EliteVaskPage'
+import GamingPCPage from './pages/GamingPCPage'
 import FooterSection from './components/FooterSection'
 function Home() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/experience/:slug" element={<ExperienceDetail />} />
         <Route path="/projects/svendeproeve" element={<SvendeproevePage />} />
         <Route path="/projects/elite-vask" element={<EliteVaskPage />} />
+        <Route path="/projects/gaming-pc" element={<GamingPCPage />} />
       </Routes>
     </LanguageProvider>
   )
