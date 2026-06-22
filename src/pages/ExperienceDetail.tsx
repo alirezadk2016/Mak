@@ -70,6 +70,34 @@ const experiences: Record<string, ExpData> = {
       },
     ],
   },
+  aarhustech: {
+    company: 'Aarhus Tech',
+    role: { da: 'Eksamensvagt — IT Support', en: 'Exam Supervisor — IT Support' },
+    period: { da: 'Frivillig', en: 'Volunteer' },
+    url: 'https://www.aarhustech.dk/',
+    priceUrl: 'https://www.aarhustech.dk/',
+    screenshot: 'https://image.thum.io/get/width/1280/crop/720/https://www.aarhustech.dk/',
+    color: '#FF6B00',
+    tasks: [
+      {
+        title: { da: 'Printesupport', en: 'Printer Support' },
+        items: [
+          { da: 'Hjælp til elever med printerproblemer under eksamener', en: 'Assisting students with printer issues during exams' },
+          { da: 'Fejlfinding og løsning af papirstop og forbindelsesfejl', en: 'Troubleshooting paper jams and connection errors' },
+          { da: 'Sikring af at alle elever kunne printe deres opgaver til tiden', en: 'Ensuring all students could print their assignments on time' },
+        ],
+      },
+      {
+        title: { da: 'Computer & Software Support', en: 'Computer & Software Support' },
+        items: [
+          { da: 'On-site IT-support til elever ved tekniske problemer under eksamen', en: 'On-site IT support for students with technical issues during exams' },
+          { da: 'Løsning af systemfrysning, softwarefejl og loginproblemer', en: 'Resolving system freezes, software errors and login issues' },
+          { da: 'Hurtig og rolig problemløsning for at minimere forstyrrelser', en: 'Fast and calm problem-solving to minimize disruptions' },
+          { da: 'Koordinering med skolens IT-afdeling ved større problemer', en: 'Coordination with the school IT department for major issues' },
+        ],
+      },
+    ],
+  },
   folkehuse: {
     company: 'Folkehuse Aarhus',
     role: { da: 'IT Support — Skolepraktik', en: 'IT Support — School Placement' },

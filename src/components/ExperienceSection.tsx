@@ -9,12 +9,14 @@ const screenshots: Record<string, string> = {
   yousee: 'https://image.thum.io/get/width/1280/crop/720/https://yousee.dk/',
   fourcom: 'https://image.thum.io/get/width/1280/crop/720/https://en.fourcom.dk/',
   folkehuse: 'https://image.thum.io/get/width/1280/crop/720/https://folkehuse.aarhus.dk/',
+  aarhustech: 'https://image.thum.io/get/width/1280/crop/720/https://www.aarhustech.dk/',
 }
 
 const accentColors: Record<string, string> = {
   yousee: '#E4002B',
   fourcom: '#0057B8',
   folkehuse: '#2E7D32',
+  aarhustech: '#FF6B00',
 }
 
 function TiltCard({ exp, viewDetails }: { exp: { slug: string; company: string; role: string; period: string }; viewDetails: string }) {
