@@ -13,7 +13,7 @@ export const t = {
     },
     about: {
       heading: 'Om mig',
-      bio: 'Nyuddannet IT-supporter fra Aarhus Tech med solid erfaring inden for netværk, servere og brugersupport. Jeg kombinerer teknisk præcision med et øje for design — og jeg er klar til at bidrage fra dag ét.',
+      bio: 'Teknologi har altid været min passion. Da jeg flyttede til Danmark, tog jeg det bevidste valg om at følge den — og gennemførte IT-supporteruddannelsen på Aarhus Tech med succes. Min vej hertil har ført mig gennem marketing og SEO, hvilket har gjort mig til en alsidig og løsningsorienteret person. Jeg har arbejdet med mennesker i alle aldre og ved, hvordan man tackler selv de sværeste IT-udfordringer roligt og tydeligt — uanset om det er en 16-årig eller en 70-årig på den anden side af bordet. Jeg er altid smilende, skaber en god stemning og er konstant klar til at tage nye udfordringer op.',
       stats: [
         { num: '3+', label: 'Virksomheder' },
         { num: '2026', label: 'Aarhus Tech' },
@@ -111,7 +111,7 @@ export const t = {
     },
     about: {
       heading: 'About me',
-      bio: 'Newly qualified IT Support Technician from Aarhus Tech with solid experience in networking, servers and user support. I combine technical precision with an eye for design — and I am ready to contribute from day one.',
+      bio: 'Technology has always been my passion. When I moved to Denmark, I made a deliberate choice to pursue it — and successfully completed my IT Support education at Aarhus Tech. My background spans marketing and SEO, which shaped me into a versatile and solution-oriented professional. I have worked with people of all ages and know how to handle even the toughest IT challenges calmly and clearly — whether it is a 16-year-old or a 70-year-old on the other side of the table. I always bring a smile, create a positive atmosphere, and am constantly ready to take on new challenges.',
       stats: [
         { num: '3+', label: 'Companies' },
         { num: '2026', label: 'Aarhus Tech' },
