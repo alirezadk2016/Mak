@@ -261,13 +261,13 @@ export default function HeroSection() {
                   animate={{ y: 0 }}
                   transition={{ delay: 1.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontStyle: 'italic',
-                    fontWeight: 700,
-                    color: '#D7E2EA',
-                    fontSize: 'clamp(1.1rem, 5.5vw, 1.3rem)',
-                    lineHeight: 1.2,
-                    letterSpacing: '-0.01em',
+                    fontFamily: 'Kanit, sans-serif',
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    color: 'rgba(215,226,234,0.55)',
+                    fontSize: 'clamp(0.95rem, 4.8vw, 1.15rem)',
+                    lineHeight: 1.25,
+                    letterSpacing: '0.01em',
                   }}
                 >
                   {lang === 'da' ? 'Klar til nye udfordringer.' : 'Ready for new challenges.'}
@@ -282,7 +282,7 @@ export default function HeroSection() {
                 className="flex items-center gap-2 pt-0.5"
               >
                 <span style={{ color: '#D7E2EA', opacity: 0.2, fontSize: '8px', letterSpacing: '0.3em', textTransform: 'uppercase' }}>
-                  Aarhus · IT Support · Web Design
+                  Aarhus · IT Support
                 </span>
               </motion.div>
             </div>
