@@ -8,7 +8,7 @@ export default function HeroSection() {
       {/* Navbar */}
       <FadeIn delay={0} y={-20}>
         <nav className="flex justify-between px-6 md:px-10 pt-6 md:pt-8">
-          {['About', 'Experience', 'Projects', 'Contact'].map((link) => (
+          {['About', 'Experience', 'Projects'].map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
@@ -18,6 +18,15 @@ export default function HeroSection() {
               {link}
             </a>
           ))}
+          <a
+            href="https://dk.linkedin.com/in/alireza-makvandi-446704301"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm md:text-lg lg:text-[1.4rem] font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70"
+            style={{ color: '#D7E2EA' }}
+          >
+            Contact
+          </a>
         </nav>
       </FadeIn>
 
