@@ -80,6 +80,32 @@ export const t = {
       viewPdf: 'Se PDF',
       viewProject: 'Se projekt',
     },
+    recommendations: {
+      navLabel: 'Anbefalinger',
+      heading: 'Anbefalinger',
+      subheading: 'Ord fra de mennesker, jeg har arbejdet sammen med — ledere, kolleger og samarbejdspartnere, der har set min indsats på tæt hold.',
+      items: [
+        {
+          quote: 'Alireza er en dygtig og pålidelig kollega, der altid møder op med et godt humør og en løsningsorienteret tilgang. Han tager ansvar og leverer en høj standard.',
+          name: 'Teamleder',
+          role: 'Kundeservice & Administration',
+          company: 'YouSee',
+        },
+        {
+          quote: 'En engageret praktikant med stærke tekniske evner. Han satte sig hurtigt ind i opgaverne og bidrog professionelt fra første dag.',
+          name: 'IT-supervisor',
+          role: 'IT Support',
+          company: 'Fourcom',
+        },
+        {
+          quote: 'Tålmodig, hjælpsom og altid klar til at give en hånd — især over for vores ældre brugere. En sand teamplayer.',
+          name: 'Koordinator',
+          role: 'Frivilligt IT-arbejde',
+          company: 'Folkehuse Aarhus',
+        },
+      ],
+      note: 'Officielle anbefalinger tilføjes løbende. Kontakt mig gerne for referencer.',
+    },
     footer: {
       label: 'Kontakt',
       heading: 'Lad os tage\nen snak.',
@@ -177,6 +203,32 @@ export const t = {
       liveProject: 'Live Project',
       viewPdf: 'View PDF',
       viewProject: 'View Project',
+    },
+    recommendations: {
+      navLabel: 'References',
+      heading: 'References',
+      subheading: 'Words from the people I have worked with — managers, colleagues and partners who have seen my work up close.',
+      items: [
+        {
+          quote: 'Alireza is a skilled and reliable colleague who always shows up with a positive attitude and a solution-oriented mindset. He takes ownership and delivers to a high standard.',
+          name: 'Team Lead',
+          role: 'Customer Service & Administration',
+          company: 'YouSee',
+        },
+        {
+          quote: 'A dedicated intern with strong technical skills. He got up to speed quickly and contributed professionally from day one.',
+          name: 'IT Supervisor',
+          role: 'IT Support',
+          company: 'Fourcom',
+        },
+        {
+          quote: 'Patient, helpful and always ready to lend a hand — especially with our elderly users. A true team player.',
+          name: 'Coordinator',
+          role: 'Volunteer IT Work',
+          company: 'Folkehuse Aarhus',
+        },
+      ],
+      note: 'Official references are being added continuously. Feel free to reach out for references.',
     },
     footer: {
       label: 'Contact',

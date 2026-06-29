@@ -83,17 +83,18 @@ export default function HeroSection() {
     <>
       {/* Fixed Nav */}
       <nav className="site-nav">
-        <div className="flex gap-6 sm:gap-10">
+        <div className="flex gap-5 sm:gap-9">
           {[
-            { key: 'about', label: tx.nav.about },
-            { key: 'experience', label: tx.nav.experience },
-            { key: 'projects', label: tx.nav.projects },
-          ].map(({ key, label }) => (
+            { key: 'about', label: tx.nav.about, mobile: true },
+            { key: 'experience', label: tx.nav.experience, mobile: true },
+            { key: 'projects', label: tx.nav.projects, mobile: true },
+            { key: 'recommendations', label: tx.recommendations.navLabel, mobile: false },
+          ].map(({ key, label, mobile }) => (
             <a
               key={key}
               href={`#${key}`}
               onClick={(e) => { e.preventDefault(); scrollTo(key) }}
-              className="transition-opacity duration-200 hover:opacity-50"
+              className={`transition-opacity duration-200 hover:opacity-50 ${mobile ? '' : 'hidden sm:inline'}`}
               style={{ color: '#E8DDD0', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 500 }}
             >
               {label}
