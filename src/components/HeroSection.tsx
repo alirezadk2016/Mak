@@ -208,9 +208,9 @@ export default function HeroSection() {
 
         </div>
 
-        {/* ── DESKTOP layout — refined split ── */}
-        <div className="hidden sm:flex sm:flex-1 items-center px-10 md:px-16 lg:px-20 relative z-10">
-          <div className="w-full grid grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-center">
+        {/* ── DESKTOP layout — centered, balanced ── */}
+        <div className="hidden sm:flex sm:flex-1 items-center justify-center px-10 md:px-14 relative z-10">
+          <div className="w-full max-w-5xl grid grid-cols-[1.25fr_1fr] gap-10 md:gap-14 items-center">
 
             {/* Left — identity */}
             <div className="flex flex-col">
@@ -228,8 +228,8 @@ export default function HeroSection() {
 
               <div className="overflow-hidden">
                 <h1
-                  className="hero-heading font-black uppercase tracking-tight leading-[0.92]"
-                  style={{ fontSize: 'clamp(2.8rem, 6.5vw, 6.5rem)', letterSpacing: '-0.02em' }}
+                  className="hero-heading font-black uppercase tracking-tight leading-[0.9]"
+                  style={{ fontSize: 'clamp(2.6rem, 6vw, 5.8rem)', letterSpacing: '-0.02em' }}
                 >
                   <span className="block"><AnimatedHeading text="Alireza" /></span>
                   <span className="block"><AnimatedHeading text="Makvandi" /></span>
@@ -237,19 +237,37 @@ export default function HeroSection() {
               </div>
 
               <FadeIn delay={0.55} y={16}>
-                <div className="mt-6 mb-9 flex items-center gap-4">
+                <div className="mt-6 flex items-center gap-4">
                   <div className="w-10 h-px" style={{ background: 'rgba(201,169,110,0.5)' }} />
                   <p
                     className="font-light uppercase"
-                    style={{ color: '#E8DDD0', opacity: 0.5, fontSize: 'clamp(0.7rem, 1vw, 0.95rem)', letterSpacing: '0.28em' }}
+                    style={{ color: '#E8DDD0', opacity: 0.5, fontSize: 'clamp(0.7rem, 1vw, 0.9rem)', letterSpacing: '0.26em' }}
                   >
                     {tx.hero.role}
                   </p>
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.7} y={16}>
-                <div className="flex items-center gap-8">
+              {/* Credibility row */}
+              <FadeIn delay={0.65} y={16}>
+                <div className="flex flex-wrap gap-2.5 mt-8">
+                  {[
+                    lang === 'da' ? '10 års erfaring' : '10 yrs experience',
+                    'Aarhus Tech 2026',
+                    'YouSee · Fourcom',
+                  ].map((chip) => (
+                    <span
+                      key={chip}
+                      style={{ color: '#E8DDD0', opacity: 0.5, fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', padding: '6px 14px', border: '1px solid rgba(232,224,213,0.12)', borderRadius: '100px' }}
+                    >
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.8} y={16}>
+                <div className="flex items-center gap-8 mt-10">
                   <ContactButton label={tx.hero.cta} />
                   <span className="flex-shrink-0" style={{ color: '#E8DDD0', opacity: 0.3, fontSize: '11px', letterSpacing: '0.12em' }}>
                     Aarhus · DK
@@ -258,18 +276,27 @@ export default function HeroSection() {
               </FadeIn>
             </div>
 
-            {/* Right — portrait */}
-            <Magnet
-              padding={120}
-              strength={2}
-              activeTransition="transform 0.3s ease-out"
-              inactiveTransition="transform 0.6s ease-in-out"
-              className="justify-self-end w-[280px] md:w-[340px] lg:w-[400px]"
-            >
-              <FadeIn delay={0.45} y={30}>
-                <FlipAvatar className="w-full aspect-square" />
-              </FadeIn>
-            </Magnet>
+            {/* Right — portrait with frame */}
+            <div className="flex justify-center">
+              <Magnet
+                padding={120}
+                strength={2}
+                activeTransition="transform 0.3s ease-out"
+                inactiveTransition="transform 0.6s ease-in-out"
+                className="w-[300px] md:w-[340px] lg:w-[380px]"
+              >
+                <FadeIn delay={0.45} y={30}>
+                  <div
+                    className="rounded-full p-[3px]"
+                    style={{ background: 'linear-gradient(155deg, rgba(201,169,110,0.5) 0%, rgba(232,224,213,0.08) 45%, rgba(201,169,110,0.25) 100%)' }}
+                  >
+                    <div className="rounded-full p-2" style={{ background: '#0A0908' }}>
+                      <FlipAvatar className="w-full aspect-square" />
+                    </div>
+                  </div>
+                </FadeIn>
+              </Magnet>
+            </div>
 
           </div>
         </div>
