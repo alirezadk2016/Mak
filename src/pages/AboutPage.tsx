@@ -24,10 +24,12 @@ const content = {
     journeyLabel: 'Min rejse',
     journey: [
       { year: '2016', title: 'Ankomst til Danmark', desc: 'Jeg startede i sprogskole næsten med det samme — fast besluttet på at lære dansk og bygge et nyt liv her.' },
-      { year: '2016 – 2017', title: 'Aarhus HF & VUC', desc: 'Tog de nødvendige uddannelsesmæssige skridt for at få danske eksamensbeviser og styrke mit sprog.' },
-      { year: '2017 – 2021', title: 'YouSee — Nuuday A/S', desc: 'Arbejdede med kundebetjening, drift og administrative opgaver. Blev senere fastansat og fik en officiel anbefaling.' },
-      { year: '2024 – 2026', title: 'Aarhus Tech', desc: 'Gennemførte IT-supporteruddannelsen med fokus på netværk, servere, sikkerhed og brugersupport.' },
-      { year: 'I dag', title: 'Klar til næste skridt', desc: 'Nyuddannet IT-supporter, klar til at bidrage fra dag ét med energi og engagement.' },
+      { year: '2017 – 2021', title: 'YouSee / TDC — Aarhus', desc: 'Næsten fire år som studentermedhjælper med kundeservice, drift, bogføring og praktiske IT-opgaver. Fik en officiel anbefaling fra butikschefen.' },
+      { year: '2018 – 2020', title: 'IGU — Nuuday A/S', desc: 'Integrationsgrunduddannelse med fokus på dansk som nyt sprog og faglige kompetencer.' },
+      { year: '2020 – 2023', title: 'Aarhus HF & VUC', desc: 'Afsluttede C-niveau og styrkede mit sprog — de nødvendige skridt mod en erhvervsuddannelse.' },
+      { year: '2024', title: 'Praktik hos Fourcom ApS', desc: 'Opsætning af Windows, fejlfinding og reparation af hardware, samt brugersupport og dokumentation.' },
+      { year: '2024 – 2026', title: 'Aarhus Tech — IT Support', desc: 'IT-supporteruddannelsen med skolepraktik — bl.a. én dag om ugen på et plejehjem med brugersupport. Afsluttede Hovedforløb 2 i oktober 2025.' },
+      { year: 'I dag', title: 'Søger læreplads', desc: 'Klar til at færdiggøre min uddannelse i praksis og bidrage fra dag ét med energi og engagement.' },
     ],
     expertiseLabel: 'Mine kompetencer',
     expertise: [
@@ -37,7 +39,7 @@ const content = {
       { icon: Users, title: 'Brugersupport', desc: 'Tålmodig og professionel support til brugere på alle tekniske niveauer.' },
     ],
     beyondLabel: 'Ud over IT',
-    beyondText: 'I min tid i Danmark har jeg prøvet kræfter med mange forskellige felter — bl.a. som frisør og som hjælpetræner i en bokseklub. Det har lært mig at tilpasse mig, samarbejde med alle slags mennesker og tage ansvar i forskellige miljøer.',
+    beyondText: 'I min tid i Danmark har jeg prøvet kræfter med mange forskellige felter — som hjælpetræner i bokseklubben Champs Camp, som frisørassistent hos Frisør Katalina, og som lagermedarbejder gennem vikarbureauet Moment (bl.a. Salling Group og Søstrene Grene). Det har lært mig at tilpasse mig, samarbejde med alle slags mennesker og tage ansvar i forskellige miljøer.',
     interestsLabel: 'Interesser & fritid',
     interests: [
       { icon: Cpu, title: 'Teknologi & IT', desc: 'Jeg kan blive helt opslugt af computere. Alt inden for IT og internettets fremtid fascinerer mig.' },
@@ -67,10 +69,12 @@ const content = {
     journeyLabel: 'My journey',
     journey: [
       { year: '2016', title: 'Arrival in Denmark', desc: 'I started language school almost immediately — determined to learn Danish and build a new life here.' },
-      { year: '2016 – 2017', title: 'Aarhus HF & VUC', desc: 'Took the necessary educational steps to earn Danish qualifications and strengthen my language.' },
-      { year: '2017 – 2021', title: 'YouSee — Nuuday A/S', desc: 'Worked in customer service, operations and administration. Later permanently employed and received an official reference.' },
-      { year: '2024 – 2026', title: 'Aarhus Tech', desc: 'Completed the IT Support education focused on networks, servers, security and user support.' },
-      { year: 'Today', title: 'Ready for the next step', desc: 'Newly qualified IT supporter, ready to contribute from day one with energy and commitment.' },
+      { year: '2017 – 2021', title: 'YouSee / TDC — Aarhus', desc: 'Nearly four years as a student assistant in customer service, operations, bookkeeping and practical IT tasks. Received an official reference from the store manager.' },
+      { year: '2018 – 2020', title: 'IGU — Nuuday A/S', desc: 'Integration training focused on Danish as a new language and professional skills.' },
+      { year: '2020 – 2023', title: 'Aarhus HF & VUC', desc: 'Completed C-level and strengthened my language — the necessary steps towards vocational education.' },
+      { year: '2024', title: 'Internship at Fourcom ApS', desc: 'Windows setup, troubleshooting and hardware repair, along with user support and documentation.' },
+      { year: '2024 – 2026', title: 'Aarhus Tech — IT Support', desc: 'IT Support education with school practice — including one day a week at a nursing home doing user support. Completed Main Course 2 in October 2025.' },
+      { year: 'Today', title: 'Seeking an apprenticeship', desc: 'Ready to complete my education in practice and contribute from day one with energy and commitment.' },
     ],
     expertiseLabel: 'My expertise',
     expertise: [
@@ -80,7 +84,7 @@ const content = {
       { icon: Users, title: 'User Support', desc: 'Patient, professional support for users at every technical level.' },
     ],
     beyondLabel: 'Beyond IT',
-    beyondText: 'During my time in Denmark I have worked across many different fields — including as a hairdresser and as an assistant coach at a boxing club. It taught me to adapt, work with all kinds of people and take responsibility in different environments.',
+    beyondText: 'During my time in Denmark I have worked across many different fields — as an assistant coach at the boxing club Champs Camp, as a hairdresser assistant at Frisør Katalina, and as a warehouse worker through the Moment agency (including Salling Group and Søstrene Grene). It taught me to adapt, work with all kinds of people and take responsibility in different environments.',
     interestsLabel: 'Interests & hobbies',
     interests: [
       { icon: Cpu, title: 'Technology & IT', desc: 'I can get completely absorbed in computers. Everything about IT and the future of the internet fascinates me.' },
