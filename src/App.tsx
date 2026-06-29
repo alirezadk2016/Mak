@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
 import CustomCursor from './components/CustomCursor'
 import HeroSection from './components/HeroSection'
+import AboutTeaser from './components/AboutTeaser'
 import ServicesSection from './components/ServicesSection'
 import ProjectsSection from './components/ProjectsSection'
 import ExperienceSection from './components/ExperienceSection'
@@ -17,6 +18,7 @@ function Home() {
   return (
     <main style={{ overflowX: 'clip', background: '#0C0C0C' }}>
       <HeroSection />
+      <AboutTeaser />
       <ServicesSection />
       <ExperienceSection />
       <ProjectsSection />
