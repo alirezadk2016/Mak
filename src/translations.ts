@@ -13,7 +13,7 @@ export const t = {
     },
     about: {
       heading: 'Om mig',
-      bio: 'Jeg er nyuddannet IT-supporter fra Aarhus Tech og søger en læreplads, hvor jeg kan omsætte min uddannelse til praksis. Gennem de seneste ti år i Danmark har jeg opbygget erfaring fra bl.a. YouSee og en praktik hos Fourcom, hvor jeg har arbejdet med Windows, hardware, fejlfinding og brugersupport. Jeg er mødestabil, ansvarlig og nysgerrig, lærer hurtigt og gør altid mit bedste for at levere rolig og professionel support. Jeg trives med at hjælpe mennesker — uanset deres tekniske niveau — og er klar til at bidrage fra dag ét.',
+      bio: 'Jeg er uddannet IT-supporter fra Aarhus Tech og søger nu et fast job, hvor jeg kan omsætte min uddannelse til praksis. Gennem de seneste ti år i Danmark har jeg opbygget erfaring fra bl.a. YouSee og en praktik hos Fourcom, hvor jeg har arbejdet med Windows, hardware, fejlfinding og brugersupport. Jeg er mødestabil, ansvarlig og nysgerrig, lærer hurtigt og gør altid mit bedste for at levere rolig og professionel support. Jeg trives med at hjælpe mennesker — uanset deres tekniske niveau — og er klar til at bidrage fra dag ét.',
       stats: [
         { num: '3+', label: 'Virksomheder' },
         { num: '2026', label: 'Aarhus Tech' },
@@ -133,7 +133,7 @@ export const t = {
     },
     about: {
       heading: 'About me',
-      bio: 'I am a newly qualified IT supporter from Aarhus Tech, looking for an apprenticeship where I can put my education into practice. Over the past ten years in Denmark I have built experience from YouSee and an internship at Fourcom, working with Windows, hardware, troubleshooting and user support. I am reliable, responsible and curious, I learn quickly and always do my best to deliver calm, professional support. I enjoy helping people — regardless of their technical level — and I am ready to contribute from day one.',
+      bio: 'I am a qualified IT supporter from Aarhus Tech, now looking for a permanent job where I can put my education into practice. Over the past ten years in Denmark I have built experience from YouSee and an internship at Fourcom, working with Windows, hardware, troubleshooting and user support. I am reliable, responsible and curious, I learn quickly and always do my best to deliver calm, professional support. I enjoy helping people — regardless of their technical level — and I am ready to contribute from day one.',
       stats: [
         { num: '3+', label: 'Companies' },
         { num: '2026', label: 'Aarhus Tech' },

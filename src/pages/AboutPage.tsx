@@ -29,7 +29,7 @@ const content = {
       { year: '2020 – 2023', title: 'Aarhus HF & VUC', desc: 'Afsluttede C-niveau og styrkede mit sprog — de nødvendige skridt mod en erhvervsuddannelse.' },
       { year: '2024', title: 'Praktik hos Fourcom ApS', desc: 'Opsætning af Windows, fejlfinding og reparation af hardware, samt brugersupport og dokumentation.' },
       { year: '2024 – 2026', title: 'Aarhus Tech — IT Support', desc: 'IT-supporteruddannelsen med skolepraktik — bl.a. én dag om ugen på et plejehjem med brugersupport. Afsluttede Hovedforløb 2 i oktober 2025.' },
-      { year: 'I dag', title: 'Søger læreplads', desc: 'Klar til at færdiggøre min uddannelse i praksis og bidrage fra dag ét med energi og engagement.' },
+      { year: 'I dag', title: 'Søger fast job', desc: 'Færdiguddannet og klar til at bidrage fra dag ét med energi og engagement.' },
     ],
     expertiseLabel: 'Mine kompetencer',
     expertise: [
@@ -76,7 +76,7 @@ const content = {
       { year: '2020 – 2023', title: 'Aarhus HF & VUC', desc: 'Completed C-level and strengthened my language — the necessary steps towards vocational education.' },
       { year: '2024', title: 'Internship at Fourcom ApS', desc: 'Windows setup, troubleshooting and hardware repair, along with user support and documentation.' },
       { year: '2024 – 2026', title: 'Aarhus Tech — IT Support', desc: 'IT Support education with school practice — including one day a week at a nursing home doing user support. Completed Main Course 2 in October 2025.' },
-      { year: 'Today', title: 'Seeking an apprenticeship', desc: 'Ready to complete my education in practice and contribute from day one with energy and commitment.' },
+      { year: 'Today', title: 'Seeking a permanent job', desc: 'Fully qualified and ready to contribute from day one with energy and commitment.' },
     ],
     expertiseLabel: 'My expertise',
     expertise: [
