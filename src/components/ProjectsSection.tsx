@@ -154,14 +154,12 @@ function ProjectCard({
               <div className="flex flex-col gap-3" style={{ width: '38%' }}>
                 <SmartImage
                   src={project.col1img1!}
-                  label={project.name}
                   className="w-full rounded-[16px] sm:rounded-[24px]"
                   imgClassName="w-full h-full object-cover"
                   style={{ flex: '0 0 38%' }}
                 />
                 <SmartImage
                   src={project.col1img2!}
-                  label={project.name}
                   className="w-full rounded-[16px] sm:rounded-[24px]"
                   imgClassName="w-full h-full object-cover"
                   style={{ flex: '1 1 0' }}

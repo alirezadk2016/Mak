@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
 import CustomCursor from './components/CustomCursor'
+import ScrollToTop from './components/ScrollToTop'
 import HeroSection from './components/HeroSection'
 import AboutTeaser from './components/AboutTeaser'
 import ServicesSection from './components/ServicesSection'
@@ -30,6 +31,7 @@ function Home() {
 export default function App() {
   return (
     <LanguageProvider>
+      <ScrollToTop />
       <CustomCursor />
       <Routes>
         <Route path="/" element={<Home />} />
