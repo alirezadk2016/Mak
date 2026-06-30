@@ -10,6 +10,7 @@ export const t = {
       heading: "Alireza Makvandi",
       role: 'IT-supporter & Web Designer',
       cta: 'Kontakt mig',
+      downloadCv: 'Download CV',
     },
     about: {
       heading: 'Om mig',
@@ -130,6 +131,7 @@ export const t = {
       heading: "Alireza Makvandi",
       role: 'IT Support & Web Designer',
       cta: 'Contact Me',
+      downloadCv: 'Download CV',
     },
     about: {
       heading: 'About me',

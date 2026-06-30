@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowLeft, MapPin, Calendar, Languages, Dumbbell,
-  Gamepad2, Cpu, Server, PenTool, Users, Sparkles,
+  Gamepad2, Cpu, Server, PenTool, Users, Sparkles, Download,
 } from 'lucide-react'
 import { useLang } from '../contexts/LanguageContext'
 import { t } from '../translations'
@@ -358,9 +358,19 @@ export default function AboutPage() {
         <motion.div
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center pt-4"
+          className="flex flex-wrap justify-center items-center gap-5 pt-4"
         >
           <ContactButton label={c.ctaLabel} />
+          <a
+            href="/cv-alireza-makvandi.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full transition-opacity hover:opacity-70"
+            style={{ color: '#E8DDD0', padding: '12px 22px', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 500, border: '1px solid rgba(201,169,110,0.45)' }}
+          >
+            <Download size={13} strokeWidth={1.8} style={{ color: '#C9A96E' }} />
+            {lang === 'da' ? 'Download CV' : 'Download CV'}
+          </a>
         </motion.div>
       </div>
     </main>

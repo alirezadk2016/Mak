@@ -1,4 +1,4 @@
-import { Globe, Menu, X } from 'lucide-react'
+import { Globe, Menu, X, Download } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -240,7 +240,19 @@ export default function HeroSection() {
           </FadeIn>
 
           <FadeIn delay={0.65} y={20}>
-            <ContactButton label={tx.hero.cta} />
+            <div className="flex items-center gap-3">
+              <ContactButton label={tx.hero.cta} />
+              <a
+                href="/cv-alireza-makvandi.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full"
+                style={{ color: '#E8DDD0', padding: '11px 18px', fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 500, border: '1px solid rgba(201,169,110,0.45)' }}
+              >
+                <Download size={12} strokeWidth={1.8} style={{ color: '#C9A96E' }} />
+                CV
+              </a>
+            </div>
           </FadeIn>
 
           {/* Available for work — mobile */}
@@ -332,11 +344,18 @@ export default function HeroSection() {
               </FadeIn>
 
               <FadeIn delay={0.8} y={16}>
-                <div className="flex items-center gap-8 mt-10">
+                <div className="flex items-center gap-5 mt-10">
                   <ContactButton label={tx.hero.cta} />
-                  <span className="flex-shrink-0" style={{ color: '#E8DDD0', opacity: 0.3, fontSize: '11px', letterSpacing: '0.12em' }}>
-                    Aarhus · DK
-                  </span>
+                  <a
+                    href="/cv-alireza-makvandi.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full transition-colors duration-300 hover:opacity-70"
+                    style={{ color: '#E8DDD0', padding: '12px 22px', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 500, border: '1px solid rgba(201,169,110,0.45)' }}
+                  >
+                    <Download size={13} strokeWidth={1.8} style={{ color: '#C9A96E' }} />
+                    {tx.hero.downloadCv}
+                  </a>
                 </div>
               </FadeIn>
             </div>
